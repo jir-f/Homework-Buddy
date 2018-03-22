@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C9DB0F12064617E00069486 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4CBC2C202061BDFC003857E2 /* Homework Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Homework Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBC2C232061BDFC003857E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CBC2C252061BDFC003857E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		4CBC2C172061BDFC003857E2 = {
 			isa = PBXGroup;
 			children = (
+				4C9DB0F12064617E00069486 /* README.md */,
 				4CBC2C222061BDFC003857E2 /* Homework Buddy */,
 				4CBC2C212061BDFC003857E2 /* Products */,
 			);
