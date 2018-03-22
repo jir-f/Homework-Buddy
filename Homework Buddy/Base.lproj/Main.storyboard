@@ -1,24 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fw8-8w-Ric">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Homework-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Homework_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homework" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRD-35-Yv8">
+                                <rect key="frame" x="146" y="20" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cRD-35-Yv8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Pbo-ft-sOs"/>
+                            <constraint firstItem="cRD-35-Yv8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qnO-dQ-hDm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Homework" image="homework.png" selectedImage="homework.png" id="D4M-wz-zXz">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="95d-4d-FaX"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2329" y="1000"/>
+        </scene>
+        <!--Today-->
+        <scene sceneID="93Q-Tu-h7e">
+            <objects>
+                <viewController id="Mve-yD-JaX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cvu-VT-sig">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pen-V8-d2l">
+                                <rect key="frame" x="164.5" y="20" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pen-V8-d2l" firstAttribute="top" secondItem="0UX-X0-T4C" secondAttribute="top" id="BZc-kt-vJq"/>
+                            <constraint firstItem="pen-V8-d2l" firstAttribute="centerX" secondItem="Cvu-VT-sig" secondAttribute="centerX" id="Rjz-0l-tAY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0UX-X0-T4C"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Today" image="today.png" selectedImage="today.png" id="JEp-R1-1Wf">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qdt-RW-CdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249" y="1000"/>
+        </scene>
+        <!--Classes-->
+        <scene sceneID="sR8-bq-BIB">
+            <objects>
+                <viewController id="sTd-kd-fus" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WDe-D9-7MF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLp-1W-7dB">
+                                <rect key="frame" x="157" y="20" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zLp-1W-7dB" firstAttribute="top" secondItem="1zw-TV-LDf" secondAttribute="top" id="5NX-Ut-I3A"/>
+                            <constraint firstItem="zLp-1W-7dB" firstAttribute="centerX" secondItem="WDe-D9-7MF" secondAttribute="centerX" id="Zuj-d6-z1l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1zw-TV-LDf"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Classes" image="books.png" selectedImage="books.png" id="z2o-le-psd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wki-i5-A1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296.80000000000001" y="999.85007496251887"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mps-Uf-yyr">
+            <objects>
+                <tabBarController id="Fw8-8w-Ric" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8WT-U2-yPn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.15078782002899491" green="0.52398782397734889" blue="0.8306347150259068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="sTd-kd-fus" kind="relationship" relationship="viewControllers" id="akJ-J5-QSo"/>
+                        <segue destination="Mve-yD-JaX" kind="relationship" relationship="viewControllers" id="O2F-tr-axZ"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="R7i-mL-peZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="akg-hY-c7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="books.png" width="32" height="32"/>
+        <image name="homework.png" width="32" height="32"/>
+        <image name="today.png" width="32" height="32"/>
+    </resources>
 </document>
