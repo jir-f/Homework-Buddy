@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C9DB0F3206464EE00069486 /* Homewrok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DB0F2206464EE00069486 /* Homewrok.swift */; };
 		4CBC2C242061BDFC003857E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC2C232061BDFC003857E2 /* AppDelegate.swift */; };
 		4CBC2C262061BDFC003857E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC2C252061BDFC003857E2 /* ViewController.swift */; };
 		4CBC2C292061BDFC003857E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC2C272061BDFC003857E2 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		4C9DB0F12064617E00069486 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4C9DB0F2206464EE00069486 /* Homewrok.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homewrok.swift; sourceTree = "<group>"; };
 		4CBC2C202061BDFC003857E2 /* Homework Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Homework Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBC2C232061BDFC003857E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CBC2C252061BDFC003857E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				4CBC2C232061BDFC003857E2 /* AppDelegate.swift */,
 				4CBC2C252061BDFC003857E2 /* ViewController.swift */,
+				4C9DB0F2206464EE00069486 /* Homewrok.swift */,
 				4CBC2C272061BDFC003857E2 /* Main.storyboard */,
 				4CBC2C2A2061BDFC003857E2 /* Assets.xcassets */,
 				4CBC2C2C2061BDFC003857E2 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9DB0F3206464EE00069486 /* Homewrok.swift in Sources */,
 				4CBC2C262061BDFC003857E2 /* ViewController.swift in Sources */,
 				4CBC2C242061BDFC003857E2 /* AppDelegate.swift in Sources */,
 			);
