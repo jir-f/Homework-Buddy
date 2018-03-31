@@ -119,27 +119,68 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EvQ-Jh-4aG"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="Cu0-4m-q6U" kind="show" id="0AS-gP-jEa"/>
+                        <segue destination="Cu0-4m-q6U" kind="show" identifier="classDetail" id="0AS-gP-jEa"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wk-QR-Z7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="652" y="999.85007496251887"/>
         </scene>
-        <!--View Controller-->
+        <!--Class Detail View Controller-->
         <scene sceneID="KLM-U6-nNp">
             <objects>
-                <viewController id="Cu0-4m-q6U" sceneMemberID="viewController">
+                <viewController id="Cu0-4m-q6U" customClass="ClassDetailViewController" customModule="Homework_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a6h-AI-7d7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FBq-Rx-OSI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="classHomeworkCell" textLabel="xfA-Mb-har" detailTextLabel="J9W-75-con" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="Xrh-tj-bup">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xrh-tj-bup" id="kND-bG-05L">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xfA-Mb-har">
+                                                    <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J9W-75-con">
+                                                    <rect key="frame" x="15" y="33.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FBq-Rx-OSI" firstAttribute="top" secondItem="JEI-8h-JG7" secondAttribute="top" id="VdN-1K-A9F"/>
+                            <constraint firstItem="FBq-Rx-OSI" firstAttribute="leading" secondItem="JEI-8h-JG7" secondAttribute="leading" id="XFy-75-QV8"/>
+                            <constraint firstItem="FBq-Rx-OSI" firstAttribute="bottom" secondItem="JEI-8h-JG7" secondAttribute="bottom" id="l2E-zB-Jgx"/>
+                            <constraint firstItem="FBq-Rx-OSI" firstAttribute="trailing" secondItem="JEI-8h-JG7" secondAttribute="trailing" id="yXe-aF-G5N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JEI-8h-JG7"/>
                     </view>
+                    <connections>
+                        <outlet property="listOfHomework" destination="FBq-Rx-OSI" id="Tg4-eX-MPc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fU-b7-USM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="1746"/>
+            <point key="canvasLocation" x="652" y="1745.577211394303"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mps-Uf-yyr">
