@@ -38,17 +38,39 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "classHomeworkCell", for: indexPath)
+        
+        let cell = Bundle.main.loadNibNamed("HomeworkTableViewCell", owner: self, options: nil)?.first as! HomeworkTableViewCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "classHomeworkCell", for: indexPath)
         
         let row = indexPath.row
         
-        cell.textLabel?.text = classHomewroks[row].title
+//        cell.textLabel?.text = classHomewroks[row].title
+        
+        cell.homeworkTitle.text = classHomewroks[row].title
+        
+        cell.homeworkDesc.text = classHomewroks[row].description
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        ;
+        dateFormatter.dateFormat = "MMMM";
         
-        cell.detailTextLabel?.text = dateFormatter.string(from: classHomewroks[row].dueDate as Date)
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "dd"
+//        cell.detailTextLabel?.text = dateFormatter.string(from: classHomewroks[row].dueDate as Date)
+        
+         let month = dateFormatter.string(from: classHomewroks[row].dueDate as Date)
+        cell.monthLabel.text = String(month.prefix(5))
+        
+        let day = dayFormatter.string(from: classHomewroks[row].dueDate as Date)
+        cell.dayLabel.text = day
+        
+        
+        
+        
+        cell.backView.bounds.size = CGSize(width: 75, height: 75)
+        
+        cell.backView.clipsToBounds = true
+        cell.backView.layer.cornerRadius = 20
         
         return cell
         

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4C02D6F6206F045200EB3741 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02D6F5206F045200EB3741 /* Subject.swift */; };
 		4C02D6F8206F0CAA00EB3741 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02D6F7206F0CAA00EB3741 /* ClassDetailViewController.swift */; };
+		4C02D6FB206F361700EB3741 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02D6F9206F361700EB3741 /* HomeworkTableViewCell.swift */; };
+		4C02D6FC206F361700EB3741 /* HomeworkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C02D6FA206F361700EB3741 /* HomeworkTableViewCell.xib */; };
 		4C9DB0F3206464EE00069486 /* Homewrok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DB0F2206464EE00069486 /* Homewrok.swift */; };
 		4C9DB0F52064699200069486 /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DB0F42064699200069486 /* ClassesViewController.swift */; };
 		4CBA4ED5206D9E8700AE7DE4 /* ClassesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA4ED4206D9E8700AE7DE4 /* ClassesCollectionViewCell.swift */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		4C02D6F5206F045200EB3741 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		4C02D6F7206F0CAA00EB3741 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
+		4C02D6F9206F361700EB3741 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
+		4C02D6FA206F361700EB3741 /* HomeworkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeworkTableViewCell.xib; sourceTree = "<group>"; };
 		4C9DB0F12064617E00069486 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4C9DB0F2206464EE00069486 /* Homewrok.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homewrok.swift; sourceTree = "<group>"; };
 		4C9DB0F42064699200069486 /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 				4C9DB0F2206464EE00069486 /* Homewrok.swift */,
 				4C02D6F5206F045200EB3741 /* Subject.swift */,
 				4CBC2C272061BDFC003857E2 /* Main.storyboard */,
+				4C02D6F9206F361700EB3741 /* HomeworkTableViewCell.swift */,
+				4C02D6FA206F361700EB3741 /* HomeworkTableViewCell.xib */,
 				4C02D6F7206F0CAA00EB3741 /* ClassDetailViewController.swift */,
 				4CBA4ED4206D9E8700AE7DE4 /* ClassesCollectionViewCell.swift */,
 				4C9DB0F42064699200069486 /* ClassesViewController.swift */,
@@ -149,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C02D6FC206F361700EB3741 /* HomeworkTableViewCell.xib in Resources */,
 				4CBC2C2E2061BDFC003857E2 /* LaunchScreen.storyboard in Resources */,
 				4CBC2C442061C2FB003857E2 /* today.png in Resources */,
 				4CBC2C2B2061BDFC003857E2 /* Assets.xcassets in Resources */,
@@ -170,6 +177,7 @@
 				4CBA4ED5206D9E8700AE7DE4 /* ClassesCollectionViewCell.swift in Sources */,
 				4CBC2C242061BDFC003857E2 /* AppDelegate.swift in Sources */,
 				4C02D6F8206F0CAA00EB3741 /* ClassDetailViewController.swift in Sources */,
+				4C02D6FB206F361700EB3741 /* HomeworkTableViewCell.swift in Sources */,
 				4C02D6F6206F045200EB3741 /* Subject.swift in Sources */,
 				4C9DB0F52064699200069486 /* ClassesViewController.swift in Sources */,
 			);
