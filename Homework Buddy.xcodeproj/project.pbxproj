@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BC90448207AD0D300297302 /* HomeworkBuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BC90446207AD0D300297302 /* HomeworkBuddy.xcdatamodeld */; };
 		4C02D6F6206F045200EB3741 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02D6F5206F045200EB3741 /* Subject.swift */; };
 		4C02D6F8206F0CAA00EB3741 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02D6F7206F0CAA00EB3741 /* ClassDetailViewController.swift */; };
 		4C02D6FB206F361700EB3741 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02D6F9206F361700EB3741 /* HomeworkTableViewCell.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BC90447207AD0D300297302 /* HomeworkBuddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeworkBuddy.xcdatamodel; sourceTree = "<group>"; };
 		4C02D6F5206F045200EB3741 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		4C02D6F7206F0CAA00EB3741 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
 		4C02D6F9206F361700EB3741 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				4CBC2C422061C2FB003857E2 /* books.png */,
 				4CBC2C432061C2FB003857E2 /* homework.png */,
 				4CBC2C412061C2FB003857E2 /* today.png */,
+				4BC90446207AD0D300297302 /* HomeworkBuddy.xcdatamodeld */,
 			);
 			path = "Homework Buddy";
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				4C02D6F8206F0CAA00EB3741 /* ClassDetailViewController.swift in Sources */,
 				4C02D6FB206F361700EB3741 /* HomeworkTableViewCell.swift in Sources */,
 				4C02D6F6206F045200EB3741 /* Subject.swift in Sources */,
+				4BC90448207AD0D300297302 /* HomeworkBuddy.xcdatamodeld in Sources */,
 				4C9DB0F52064699200069486 /* ClassesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +368,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4BC90446207AD0D300297302 /* HomeworkBuddy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4BC90447207AD0D300297302 /* HomeworkBuddy.xcdatamodel */,
+			);
+			currentVersion = 4BC90447207AD0D300297302 /* HomeworkBuddy.xcdatamodel */;
+			path = HomeworkBuddy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4CBC2C182061BDFC003857E2 /* Project object */;
 }

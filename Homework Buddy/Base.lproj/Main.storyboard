@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fw8-8w-Ric">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fw8-8w-Ric">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -116,7 +116,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Classes" id="vYv-Z8-fCL">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EvQ-Jh-4aG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EvQ-Jh-4aG">
+                            <connections>
+                                <segue destination="86C-dF-tf8" kind="presentation" identifier="addClassSegue" id="Ieu-wp-9b6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Cu0-4m-q6U" kind="show" identifier="classDetail" id="0AS-gP-jEa"/>
@@ -164,7 +168,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fU-b7-USM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="1745.577211394303"/>
+            <point key="canvasLocation" x="-103" y="1790"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4c8-iJ-1lj">
+            <objects>
+                <viewController id="86C-dF-tf8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Bg-0U-KYR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Class" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyT-ex-kgB">
+                                <rect key="frame" x="129" y="20" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jyT-ex-kgB" firstAttribute="top" secondItem="nvF-g5-7EJ" secondAttribute="top" id="2qa-ef-fjP"/>
+                            <constraint firstItem="jyT-ex-kgB" firstAttribute="centerX" secondItem="8Bg-0U-KYR" secondAttribute="centerX" id="4qi-Wi-6Bq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nvF-g5-7EJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Zq-aJ-din" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="1790"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mps-Uf-yyr">
