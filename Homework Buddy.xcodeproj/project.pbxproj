@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B85B547207AE04E0081590A /* AddNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85B546207AE04E0081590A /* AddNewClassViewController.swift */; };
+		4B85B549207AEEBE0081590A /* AddNewHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */; };
 		4BC90448207AD0D300297302 /* HomeworkBuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BC90446207AD0D300297302 /* HomeworkBuddy.xcdatamodeld */; };
 		4C02D6F6206F045200EB3741 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02D6F5206F045200EB3741 /* Subject.swift */; };
 		4C02D6F8206F0CAA00EB3741 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02D6F7206F0CAA00EB3741 /* ClassDetailViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B85B546207AE04E0081590A /* AddNewClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewClassViewController.swift; sourceTree = "<group>"; };
+		4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHomeworkViewController.swift; sourceTree = "<group>"; };
 		4BC90447207AD0D300297302 /* HomeworkBuddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeworkBuddy.xcdatamodel; sourceTree = "<group>"; };
 		4C02D6F5206F045200EB3741 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		4C02D6F7206F0CAA00EB3741 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				4C9DB0F2206464EE00069486 /* Homewrok.swift */,
 				4C02D6F5206F045200EB3741 /* Subject.swift */,
 				4CBC2C272061BDFC003857E2 /* Main.storyboard */,
+				4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */,
+				4B85B546207AE04E0081590A /* AddNewClassViewController.swift */,
 				4C02D6F9206F361700EB3741 /* HomeworkTableViewCell.swift */,
 				4C02D6FA206F361700EB3741 /* HomeworkTableViewCell.xib */,
 				4C02D6F7206F0CAA00EB3741 /* ClassDetailViewController.swift */,
@@ -176,11 +182,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9DB0F3206464EE00069486 /* Homewrok.swift in Sources */,
+				4B85B549207AEEBE0081590A /* AddNewHomeworkViewController.swift in Sources */,
 				4CBC2C262061BDFC003857E2 /* ViewController.swift in Sources */,
 				4CBA4ED5206D9E8700AE7DE4 /* ClassesCollectionViewCell.swift in Sources */,
 				4CBC2C242061BDFC003857E2 /* AppDelegate.swift in Sources */,
 				4C02D6F8206F0CAA00EB3741 /* ClassDetailViewController.swift in Sources */,
 				4C02D6FB206F361700EB3741 /* HomeworkTableViewCell.swift in Sources */,
+				4B85B547207AE04E0081590A /* AddNewClassViewController.swift in Sources */,
 				4C02D6F6206F045200EB3741 /* Subject.swift in Sources */,
 				4BC90448207AD0D300297302 /* HomeworkBuddy.xcdatamodeld in Sources */,
 				4C9DB0F52064699200069486 /* ClassesViewController.swift in Sources */,

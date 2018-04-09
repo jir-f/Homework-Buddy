@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="HomeworkEntity" representedClassName="HomeworkEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubjectEntity" inverseName="homeworks" inverseEntity="SubjectEntity" syncable="YES"/>
+    </entity>
+    <entity name="SubjectEntity" representedClassName="SubjectEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="homeworks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HomeworkEntity" inverseName="subject" inverseEntity="HomeworkEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SubjectEntity" positionX="70" positionY="-189" width="128" height="73"/>
+        <element name="HomeworkEntity" positionX="-153" positionY="-220" width="128" height="103"/>
+    </elements>
 </model>
