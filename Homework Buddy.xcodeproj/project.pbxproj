@@ -62,6 +62,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BB6A5302080131A00044779 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				4B85B546207AE04E0081590A /* AddNewClassViewController.swift */,
+				4C02D6F7206F0CAA00EB3741 /* ClassDetailViewController.swift */,
+				4CBA4ED4206D9E8700AE7DE4 /* ClassesCollectionViewCell.swift */,
+				4C9DB0F42064699200069486 /* ClassesViewController.swift */,
+			);
+			path = Subject;
+			sourceTree = "<group>";
+		};
+		4BB6A5312080133900044779 /* Homework */ = {
+			isa = PBXGroup;
+			children = (
+				4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */,
+				4C02D6F9206F361700EB3741 /* HomeworkTableViewCell.swift */,
+			);
+			path = Homework;
+			sourceTree = "<group>";
+		};
 		4CBC2C172061BDFC003857E2 = {
 			isa = PBXGroup;
 			children = (
@@ -87,13 +107,9 @@
 				4C9DB0F2206464EE00069486 /* Homewrok.swift */,
 				4C02D6F5206F045200EB3741 /* Subject.swift */,
 				4CBC2C272061BDFC003857E2 /* Main.storyboard */,
-				4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */,
-				4B85B546207AE04E0081590A /* AddNewClassViewController.swift */,
-				4C02D6F9206F361700EB3741 /* HomeworkTableViewCell.swift */,
+				4BB6A5312080133900044779 /* Homework */,
+				4BB6A5302080131A00044779 /* Subject */,
 				4C02D6FA206F361700EB3741 /* HomeworkTableViewCell.xib */,
-				4C02D6F7206F0CAA00EB3741 /* ClassDetailViewController.swift */,
-				4CBA4ED4206D9E8700AE7DE4 /* ClassesCollectionViewCell.swift */,
-				4C9DB0F42064699200069486 /* ClassesViewController.swift */,
 				4CBC2C2A2061BDFC003857E2 /* Assets.xcassets */,
 				4CBC2C2C2061BDFC003857E2 /* LaunchScreen.storyboard */,
 				4CBC2C2F2061BDFC003857E2 /* Info.plist */,
