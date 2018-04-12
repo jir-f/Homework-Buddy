@@ -16,6 +16,9 @@ class AddNewHomeworkViewController: UIViewController {
     
     @IBOutlet weak var homeworkDueDate: UIDatePicker!
     
+    @IBAction func addHomeworkButton(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "New Homework"

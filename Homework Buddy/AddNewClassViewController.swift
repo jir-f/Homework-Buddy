@@ -7,19 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
 class AddNewClassViewController: UIViewController {
-
+    
+    var subjectName: String = ""
+    
     @IBOutlet weak var classTextField: UITextField!
     
     @IBAction func addNewClassButton(_ sender: Any) {
-    
+        if (classTextField.text?.isEmpty)! {
+            classTextField.placeholder = "Missing class name"
+            classTextField.backgroundColor = .red
+        }
+        else{
+            subjectName = classTextField.text!
+            performSegue(withIdentifier: "unwindFromAddClass", sender: nil)
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "New Class"
+        
         // Do any additional setup after loading the view.
     }
 
@@ -28,15 +39,4 @@ class AddNewClassViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

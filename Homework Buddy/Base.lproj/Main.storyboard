@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fw8-8w-Ric">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Homework_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homework" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRD-35-Yv8">
-                                <rect key="frame" x="146" y="64" width="83" height="21"/>
+                                <rect key="frame" x="165.66666666666666" y="64" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,11 +50,11 @@
             <objects>
                 <viewController id="N5o-ie-4bT" customClass="AddNewHomeworkViewController" customModule="Homework_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CZz-nB-mJH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter homework title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c9z-H3-HKg">
-                                <rect key="frame" x="20" y="111" width="335" height="30"/>
+                                <rect key="frame" x="20" y="111" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="374" id="bSb-dz-29N"/>
                                 </constraints>
@@ -63,7 +63,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter homewrok description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cD4-Vf-itA">
-                                <rect key="frame" x="20" y="191" width="335" height="30"/>
+                                <rect key="frame" x="20" y="191" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="374" id="HBb-sI-nxt"/>
                                 </constraints>
@@ -72,7 +72,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HgQ-NC-QAZ">
-                                <rect key="frame" x="0.0" y="287" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="287" width="414" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="544927638.20170105">
                                     <!--2018-04-09 00:47:18 +0000-->
                                 </date>
@@ -95,13 +95,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iO-yx-cR2">
+                                <rect key="frame" x="154" y="542" width="106" height="30"/>
+                                <state key="normal" title="Add Homework"/>
+                                <connections>
+                                    <action selector="addHomeworkButton:" destination="N5o-ie-4bT" eventType="touchUpInside" id="wew-dT-vrb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8u6-fp-DYn" firstAttribute="leading" secondItem="QY2-Bv-MeV" secondAttribute="leading" constant="20" id="0QY-IS-WgW"/>
                             <constraint firstItem="8u6-fp-DYn" firstAttribute="top" secondItem="cD4-Vf-itA" secondAttribute="bottom" constant="37" id="1sH-aT-NQU"/>
                             <constraint firstItem="HgQ-NC-QAZ" firstAttribute="leading" secondItem="QY2-Bv-MeV" secondAttribute="leading" id="5G9-KO-91b"/>
+                            <constraint firstItem="QY2-Bv-MeV" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="2iO-yx-cR2" secondAttribute="trailing" constant="154" id="8Dl-b6-1U9"/>
+                            <constraint firstItem="2iO-yx-cR2" firstAttribute="centerX" secondItem="CZz-nB-mJH" secondAttribute="centerX" id="8EU-eW-Nzy"/>
+                            <constraint firstItem="2iO-yx-cR2" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QY2-Bv-MeV" secondAttribute="leading" constant="154" id="IMq-Nm-y0f"/>
                             <constraint firstItem="QY2-Bv-MeV" firstAttribute="trailing" secondItem="c9z-H3-HKg" secondAttribute="trailing" constant="20" id="JuS-pz-J0Y"/>
+                            <constraint firstItem="2iO-yx-cR2" firstAttribute="top" secondItem="HgQ-NC-QAZ" secondAttribute="bottom" constant="39" id="Jw5-9u-fmH"/>
                             <constraint firstItem="hn3-gg-T8H" firstAttribute="top" secondItem="c9z-H3-HKg" secondAttribute="bottom" constant="21" id="KML-k9-VZa"/>
                             <constraint firstItem="c9z-H3-HKg" firstAttribute="top" secondItem="5M2-ek-BFP" secondAttribute="bottom" constant="8" id="KaE-qY-TKt"/>
                             <constraint firstItem="5M2-ek-BFP" firstAttribute="top" secondItem="QY2-Bv-MeV" secondAttribute="top" constant="18" id="M2C-Hk-CRM"/>
@@ -124,18 +135,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JrF-4e-sNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4224.6376811594209" y="998.64130434782612"/>
+            <point key="canvasLocation" x="3316" y="1789"/>
         </scene>
         <!--Today-->
         <scene sceneID="93Q-Tu-h7e">
             <objects>
                 <viewController id="Mve-yD-JaX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cvu-VT-sig">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pen-V8-d2l">
-                                <rect key="frame" x="164.5" y="20" width="46" height="21"/>
+                                <rect key="frame" x="184" y="20" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -161,7 +172,7 @@
             <objects>
                 <collectionViewController id="4CQ-09-eIP" customClass="ClassesViewController" customModule="Homework_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="prototypes" id="ZHA-5h-VaG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GyR-Hf-BAV">
@@ -179,7 +190,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIv-Ug-J5f">
-                                            <rect key="frame" x="9.5" y="43" width="102" height="21.5"/>
+                                            <rect key="frame" x="9.6666666666666643" y="43" width="102" height="21.666666666666671"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -219,18 +230,18 @@
             <objects>
                 <viewController id="Cu0-4m-q6U" customClass="ClassDetailViewController" customModule="Homework_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a6h-AI-7d7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FBq-Rx-OSI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="579"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="classHomeworkCell" rowHeight="60" id="Xrh-tj-bup">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="classHomeworkCell" rowHeight="60" id="Xrh-tj-bup">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xrh-tj-bup" id="kND-bG-05L">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -250,6 +261,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="listOfHomework" destination="FBq-Rx-OSI" id="Tg4-eX-MPc"/>
+                        <segue destination="N5o-ie-4bT" kind="show" identifier="addHomewrokFromClasses" id="p9a-fE-sAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fU-b7-USM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,11 +273,11 @@
             <objects>
                 <viewController id="86C-dF-tf8" customClass="AddNewClassViewController" customModule="Homework_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Bg-0U-KYR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igx-SN-cOd">
-                                <rect key="frame" x="153" y="356" width="69" height="30"/>
+                                <rect key="frame" x="172.66666666666666" y="390.66666666666669" width="69" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="69" id="tjq-Bz-snP"/>
                                 </constraints>
@@ -275,7 +287,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter class name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XYr-hC-w9c">
-                                <rect key="frame" x="87.5" y="318.5" width="200" height="30"/>
+                                <rect key="frame" x="107" y="353" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="7gd-fO-CL9"/>
                                 </constraints>
@@ -297,11 +309,13 @@
                     </view>
                     <connections>
                         <outlet property="classTextField" destination="XYr-hC-w9c" id="xCA-5F-0cF"/>
+                        <segue destination="Hn3-27-yrd" kind="unwind" identifier="unwindFromAddClass" unwindAction="unwindFromAddClassWithSender:" id="GfM-Nh-3tv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Zq-aJ-din" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Hn3-27-yrd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="690" y="1789"/>
+            <point key="canvasLocation" x="651" y="1789"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mps-Uf-yyr">
@@ -330,7 +344,7 @@
                     <tabBarItem key="tabBarItem" title="Classes" image="books.png" selectedImage="books.png" id="8vG-X2-FDL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P67-7K-NB2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -351,7 +365,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ONy-xc-Ysg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -369,4 +383,7 @@
         <image name="homework.png" width="32" height="32"/>
         <image name="today.png" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="p9a-fE-sAu"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,16 +7,28 @@
 //
 
 import UIKit
-
+import CoreData
+ 
 class ClassesViewController: UICollectionViewController {
     var listOfClasses = [Subject]()
     var selectedRow = 0
     
+    var managedObjectContext: NSManagedObjectContext!
+    var appDelegate: AppDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        self.managedObjectContext = appDelegate.persistentContainer.viewContext
+        
         collectionView?.backgroundColor = UIColor.white
+        
+        getClasses()
+        
         initClasses()
+        
     }
     
 //    override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -24,8 +36,27 @@ class ClassesViewController: UICollectionViewController {
 //        return 1
 //    }
 //
+    
+    func getClasses(){
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SubjectEntity")
+        var savedClasses: [NSManagedObject]!
+        do {
+            savedClasses = try self.managedObjectContext.fetch(fetchRequest) } catch {
+                print("getClasses error: \(error)")
+        }
+        print("Found \(savedClasses.count) classes")
+        
+        listOfClasses = []
+        for subject in savedClasses {
+            let subjectName = subject.value(forKey: "name") as! String
+            let subjectId = subject.objectID as NSManagedObjectID
+            let newSubject = Subject(pTitle: subjectName, pId: subjectId)
+            listOfClasses.append(newSubject)
+        }
+    }
+    
     func initClasses(){
-        var bio = Subject(pTitle: "Biology")
+        var bio = Subject(pTitle: "Biology", pId: NSManagedObjectID.init())
         bio.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: NSDate()))
         listOfClasses.append(bio)
         
@@ -34,11 +65,11 @@ class ClassesViewController: UICollectionViewController {
         }
         
         
-        var mth = Subject(pTitle: "Math")
+        var mth = Subject(pTitle: "Math", pId: NSManagedObjectID.init())
         mth.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: NSDate()))
         listOfClasses.append(mth)
         
-        var phy = Subject(pTitle: "Physics")
+        var phy = Subject(pTitle: "Physics", pId: NSManagedObjectID.init())
         phy.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: NSDate()))
         listOfClasses.append(phy)
         
@@ -71,7 +102,6 @@ class ClassesViewController: UICollectionViewController {
             let classDetailVC = segue.destination as! ClassDetailViewController
             classDetailVC.navTitle = self.listOfClasses[selectedRow].getTitle()
             classDetailVC.classHomewroks = self.listOfClasses[selectedRow].getHomeworks()
-            
         }
     }
     
@@ -85,6 +115,22 @@ class ClassesViewController: UICollectionViewController {
         
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
         
+    }
+    
+    func addClassToCoreData(className: String) -> NSManagedObjectID{
+        let subject = NSEntityDescription.insertNewObject(forEntityName:
+            "SubjectEntity", into: self.managedObjectContext)
+        subject.setValue(className, forKey: "name")
+        self.appDelegate.saveContext()
+        return subject.objectID
+    }
+    
+    @IBAction func unwindFromAddClass (sender: UIStoryboardSegue) {
+        let addSubjectVC = sender.source as! AddNewClassViewController
+        let subjectName = addSubjectVC.subjectName
+        let subjectId = addClassToCoreData(className: subjectName)
+        listOfClasses.append(Subject(pTitle: subjectName, pId: subjectId))
+        self.collectionView?.reloadData()
     }
     
 }

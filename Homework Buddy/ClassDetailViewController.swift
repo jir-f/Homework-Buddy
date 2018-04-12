@@ -22,7 +22,8 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         navigationItem.title = navTitle
         
-        
+        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(saveTapped))
+        self.navigationItem.rightBarButtonItem = rightBarButton
         self.listOfHomework.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -30,6 +31,11 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func saveTapped(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "addHomewrokFromClasses", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

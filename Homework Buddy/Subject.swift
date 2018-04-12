@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import CoreData
 
 class Subject{
     var title: String;
-    var homeworks = [Homework]() ;
+    var homeworks = [Homework]();
+    var id: NSManagedObjectID
     
-    init(pTitle: String){
+    init(pTitle: String, pId: NSManagedObjectID){
         self.title = pTitle;
+        id = NSManagedObjectID.init()
     }
     
     func getTitle() -> String{
