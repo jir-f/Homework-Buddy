@@ -7,11 +7,12 @@
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubjectEntity" inverseName="homeworks" inverseEntity="SubjectEntity" syncable="YES"/>
     </entity>
     <entity name="SubjectEntity" representedClassName="SubjectEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="homeworks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HomeworkEntity" inverseName="subject" inverseEntity="HomeworkEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SubjectEntity" positionX="70" positionY="-189" width="128" height="73"/>
         <element name="HomeworkEntity" positionX="-153" positionY="-220" width="128" height="103"/>
+        <element name="SubjectEntity" positionX="70" positionY="-189" width="128" height="88"/>
     </elements>
 </model>

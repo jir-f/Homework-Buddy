@@ -50,13 +50,14 @@ class ClassesViewController: UICollectionViewController {
         for subject in savedClasses {
             let subjectName = subject.value(forKey: "name") as! String
             let subjectId = subject.objectID as NSManagedObjectID
-            let newSubject = Subject(pTitle: subjectName, pId: subjectId)
+            let subjectColor = subject.value(forKey: "color") as! UIColor
+            let newSubject = Subject(pTitle: subjectName, pId: subjectId, pColor: subjectColor)
             listOfClasses.append(newSubject)
         }
     }
     
     func initClasses(){
-        var bio = Subject(pTitle: "Biology", pId: NSManagedObjectID.init())
+        var bio = Subject(pTitle: "Biology", pId: NSManagedObjectID.init(), pColor: getRandomColor())
         bio.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: NSDate()))
         listOfClasses.append(bio)
         
@@ -65,11 +66,11 @@ class ClassesViewController: UICollectionViewController {
         }
         
         
-        var mth = Subject(pTitle: "Math", pId: NSManagedObjectID.init())
+        var mth = Subject(pTitle: "Math", pId: NSManagedObjectID.init(), pColor: getRandomColor())
         mth.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: NSDate()))
         listOfClasses.append(mth)
         
-        var phy = Subject(pTitle: "Physics", pId: NSManagedObjectID.init())
+        var phy = Subject(pTitle: "Physics", pId: NSManagedObjectID.init(), pColor: getRandomColor())
         phy.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: NSDate()))
         listOfClasses.append(phy)
         
@@ -82,7 +83,7 @@ class ClassesViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "classCell", for: indexPath)
         
-        cell.backgroundColor = getRandomColor()
+        cell.backgroundColor = listOfClasses[indexPath.row].color
         
         var label = cell.viewWithTag(1) as! UILabel
         
@@ -117,10 +118,11 @@ class ClassesViewController: UICollectionViewController {
         
     }
     
-    func addClassToCoreData(className: String) -> NSManagedObjectID{
+    func addClassToCoreData(className: String, color: UIColor) -> NSManagedObjectID{
         let subject = NSEntityDescription.insertNewObject(forEntityName:
             "SubjectEntity", into: self.managedObjectContext)
         subject.setValue(className, forKey: "name")
+        subject.setValue(color, forKey: "color")
         self.appDelegate.saveContext()
         return subject.objectID
     }
@@ -128,8 +130,9 @@ class ClassesViewController: UICollectionViewController {
     @IBAction func unwindFromAddClass (sender: UIStoryboardSegue) {
         let addSubjectVC = sender.source as! AddNewClassViewController
         let subjectName = addSubjectVC.subjectName
-        let subjectId = addClassToCoreData(className: subjectName)
-        listOfClasses.append(Subject(pTitle: subjectName, pId: subjectId))
+        let subjectColor = getRandomColor()
+        let subjectId = addClassToCoreData(className: subjectName, color: subjectColor)
+        listOfClasses.append(Subject(pTitle: subjectName, pId: subjectId, pColor: subjectColor))
         self.collectionView?.reloadData()
     }
     

@@ -7,16 +7,19 @@
 //
 
 import Foundation
+import UIKit
 import CoreData
 
 class Subject{
     var title: String;
     var homeworks = [Homework]();
+    var color: UIColor
     var id: NSManagedObjectID
     
-    init(pTitle: String, pId: NSManagedObjectID){
+    init(pTitle: String, pId: NSManagedObjectID, pColor: UIColor){
         self.title = pTitle;
         id = NSManagedObjectID.init()
+        self.color = pColor
     }
     
     func getTitle() -> String{
@@ -30,5 +33,6 @@ class Subject{
     func getHomeworks() -> [Homework] {
         return self.homeworks
     }
+    
     
 }
