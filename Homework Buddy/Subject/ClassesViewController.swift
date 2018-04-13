@@ -11,6 +11,7 @@ import CoreData
  
 class ClassesViewController: UICollectionViewController {
     var listOfClasses = [Subject]()
+    
     var selectedRow = 0
     
     var managedObjectContext: NSManagedObjectContext!
@@ -52,26 +53,27 @@ class ClassesViewController: UICollectionViewController {
             let subjectId = subject.objectID as NSManagedObjectID
             let subjectColor = subject.value(forKey: "color") as! UIColor
             let newSubject = Subject(pTitle: subjectName, pId: subjectId, pColor: subjectColor)
+            newSubject.id = subject.objectID as NSManagedObjectID
             listOfClasses.append(newSubject)
         }
     }
     
     func initClasses(){
         var bio = Subject(pTitle: "Biology", pId: NSManagedObjectID.init(), pColor: getRandomColor())
-        bio.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: NSDate()))
+        bio.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: Date()))
         listOfClasses.append(bio)
         
-        for i in 1...20 {
-            bio.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: NSDate()))
+        for i in 1...5 {
+            bio.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: Date()))
         }
         
         
         var mth = Subject(pTitle: "Math", pId: NSManagedObjectID.init(), pColor: getRandomColor())
-        mth.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: NSDate()))
+        mth.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: Date()))
         listOfClasses.append(mth)
         
         var phy = Subject(pTitle: "Physics", pId: NSManagedObjectID.init(), pColor: getRandomColor())
-        phy.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: NSDate()))
+        phy.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: Date()))
         listOfClasses.append(phy)
         
     }
@@ -85,7 +87,9 @@ class ClassesViewController: UICollectionViewController {
         
         cell.backgroundColor = listOfClasses[indexPath.row].color
         
-        var label = cell.viewWithTag(1) as! UILabel
+        let label = cell.viewWithTag(1) as! UILabel
+        
+        cell.layer.cornerRadius = 10.0
         
         label.text = listOfClasses[indexPath.row].title
         
@@ -103,6 +107,8 @@ class ClassesViewController: UICollectionViewController {
             let classDetailVC = segue.destination as! ClassDetailViewController
             classDetailVC.navTitle = self.listOfClasses[selectedRow].getTitle()
             classDetailVC.classHomewroks = self.listOfClasses[selectedRow].getHomeworks()
+//            print(self.listOfClasses[selectedRow].id)
+            classDetailVC.subject = self.listOfClasses[selectedRow]
         }
     }
     

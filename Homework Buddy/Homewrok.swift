@@ -7,16 +7,19 @@
 //
 
 import Foundation
+import CoreData
 
 class Homework{
     var title: String;
     var description: String;
-    var dueDate: NSDate;
+    var dueDate: Date;
+    var id: NSManagedObjectID
     
-    init(pTitle: String, pDescription: String, pDueDate: NSDate){
+    init(pTitle: String, pDescription: String, pDueDate: Date){
         self.title = pTitle;
         self.description = pDescription;
         self.dueDate = pDueDate;
+        self.id = NSManagedObjectID.init()
     }
     
     func getTitle() -> String{
@@ -27,7 +30,7 @@ class Homework{
         return self.description
     }
     
-    func getDueDate() -> NSDate {
+    func getDueDate() -> Date {
         return self.dueDate
     }
 }
