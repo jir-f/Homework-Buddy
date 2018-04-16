@@ -39,5 +39,15 @@ class Helper{
     
     return day
     }
+    
+    static func dateToDateHours(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
+        
+        let result = dateFormatter.string(from: date)
+        
+        return result
+    }
+    
 }
 

@@ -82,7 +82,7 @@ class AddNewHomeworkViewController: UIViewController {
     }
     
     @objc func donePressed(){
-        dueDate.text = "\(datePicker.date)"
+        dueDate.text = "\(Helper.dateToDateHours(date: datePicker.date))"
         self.view.endEditing(true)
     }
    
