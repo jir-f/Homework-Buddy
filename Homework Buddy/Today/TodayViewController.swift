@@ -134,6 +134,10 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.backView.clipsToBounds = true
         cell.backView.layer.cornerRadius = 20
         
+        
+        let timeDue = Helper.getTime(date: classHomewroks[row].dueDate)
+        cell.homeworkTime.text = timeDue
+        
         return cell
         
     }

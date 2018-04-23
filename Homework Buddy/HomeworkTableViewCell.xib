@@ -61,7 +61,13 @@
                             <constraint firstAttribute="height" constant="29" id="lUg-7H-3RY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAx-Pn-cyG">
+                        <rect key="frame" x="325" y="60" width="46" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -74,7 +80,9 @@
                     <constraint firstAttribute="bottom" secondItem="qRT-6I-Duw" secondAttribute="bottom" constant="10.5" id="eyG-EC-Cfi"/>
                     <constraint firstItem="HQj-68-SyA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="ftJ-wo-4E0"/>
                     <constraint firstItem="qRT-6I-Duw" firstAttribute="leading" secondItem="HQj-68-SyA" secondAttribute="trailing" constant="10" id="hLl-l9-fpo"/>
+                    <constraint firstAttribute="bottom" secondItem="jAx-Pn-cyG" secondAttribute="bottom" constant="9" id="mhc-wx-la1"/>
                     <constraint firstItem="T0W-3M-hjK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="rDc-31-Zbg"/>
+                    <constraint firstAttribute="trailing" secondItem="jAx-Pn-cyG" secondAttribute="trailing" constant="17" id="saT-PO-VJ4"/>
                     <constraint firstItem="qRT-6I-Duw" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="uql-ER-FKa"/>
                 </constraints>
             </tableViewCellContentView>
@@ -83,6 +91,7 @@
                 <outlet property="backView" destination="HQj-68-SyA" id="qWD-BR-LRL"/>
                 <outlet property="dayLabel" destination="oHK-QU-Civ" id="CDW-zY-gxW"/>
                 <outlet property="homeworkDesc" destination="qRT-6I-Duw" id="l70-lC-lJc"/>
+                <outlet property="homeworkTime" destination="jAx-Pn-cyG" id="oo3-2r-ohz"/>
                 <outlet property="homeworkTitle" destination="T0W-3M-hjK" id="uEh-u2-0KZ"/>
                 <outlet property="monthLabel" destination="agW-8e-btl" id="3KL-ch-Nbf"/>
             </connections>

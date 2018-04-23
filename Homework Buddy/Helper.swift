@@ -58,6 +58,15 @@ class Helper{
         return result
     }
     
+    static func getTime(date: Date)-> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        
+        let result = dateFormatter.string(from: date)
+        
+        return result
+    }
+    
     static func sortHomework(homeworkList: [Homework]) -> [Homework]{
         return homeworkList.sorted(by: { $0.dueDate < $1.dueDate })
     }

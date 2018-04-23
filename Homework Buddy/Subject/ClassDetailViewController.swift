@@ -83,6 +83,9 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
 //        let day = dayFormatter.string(from: classHomewroks[row].dueDate as Date)
         cell.dayLabel.text = day
         
+        let timeDue = Helper.getTime(date: classHomewroks[row].dueDate)
+        cell.homeworkTime.text = timeDue
+        
         
         cell.backView.bounds.size = CGSize(width: 75, height: 75)
         

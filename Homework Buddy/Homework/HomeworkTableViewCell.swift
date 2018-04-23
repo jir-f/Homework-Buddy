@@ -19,4 +19,6 @@ class HomeworkTableViewCell: UITableViewCell {
     @IBOutlet weak var homeworkTitle: UILabel!
     
     @IBOutlet weak var homeworkDesc: UILabel!
+    
+    @IBOutlet weak var homeworkTime: UILabel!
 }
