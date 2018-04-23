@@ -145,7 +145,7 @@
         <!--Today-->
         <scene sceneID="93Q-Tu-h7e">
             <objects>
-                <viewController id="Mve-yD-JaX" sceneMemberID="viewController">
+                <viewController id="Mve-yD-JaX" customClass="TodayViewController" customModule="Homework_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cvu-VT-sig">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,21 +156,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sYA-tw-rZA">
+                                <rect key="frame" x="0.0" y="66" width="414" height="621"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TGT-tK-e48">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TGT-tK-e48" id="ilZ-No-an1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pen-V8-d2l" firstAttribute="top" secondItem="0UX-X0-T4C" secondAttribute="top" id="BZc-kt-vJq"/>
+                            <constraint firstItem="sYA-tw-rZA" firstAttribute="leading" secondItem="0UX-X0-T4C" secondAttribute="leading" id="G91-b4-5D1"/>
+                            <constraint firstItem="sYA-tw-rZA" firstAttribute="bottom" secondItem="0UX-X0-T4C" secondAttribute="bottom" id="Het-qA-SJ4"/>
+                            <constraint firstItem="sYA-tw-rZA" firstAttribute="top" secondItem="pen-V8-d2l" secondAttribute="bottom" constant="25" id="MBs-0a-lYQ"/>
                             <constraint firstItem="pen-V8-d2l" firstAttribute="centerX" secondItem="Cvu-VT-sig" secondAttribute="centerX" id="Rjz-0l-tAY"/>
+                            <constraint firstItem="sYA-tw-rZA" firstAttribute="trailing" secondItem="0UX-X0-T4C" secondAttribute="trailing" id="VlJ-jR-2QN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0UX-X0-T4C"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="today.png" selectedImage="today.png" id="JEp-R1-1Wf">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="todayLabel" destination="pen-V8-d2l" id="1Vf-8P-fNI"/>
+                        <outlet property="todayTable" destination="sYA-tw-rZA" id="eYU-xk-cHZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdt-RW-CdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="999.85007496251887"/>
+            <point key="canvasLocation" x="1510" y="999"/>
         </scene>
         <!--Classes-->
         <scene sceneID="4io-e7-P2c">
@@ -242,7 +264,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="579"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="classHomeworkCell" rowHeight="60" id="Xrh-tj-bup">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="classHomeworkCell" rowHeight="60" id="Xrh-tj-bup">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xrh-tj-bup" id="kND-bG-05L">

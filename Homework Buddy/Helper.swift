@@ -40,6 +40,15 @@ class Helper{
     return day
     }
     
+    
+    static func convertToString(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let date = dateFormatter.string(from: date)
+        
+        return date
+    }
+    
     static func dateToDateHours(date: Date) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
@@ -47,6 +56,10 @@ class Helper{
         let result = dateFormatter.string(from: date)
         
         return result
+    }
+    
+    static func sortHomework(homeworkList: [Homework]) -> [Homework]{
+        return homeworkList.sorted(by: { $0.dueDate < $1.dueDate })
     }
     
 }

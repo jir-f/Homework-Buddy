@@ -19,7 +19,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     var managedObjectContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         getHomeworks()
         self.listOfHomework.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -151,6 +151,10 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             let newHomework = Homework(pTitle: homeworkTitle, pDescription: homeeworkDesc, pDueDate: homeworkDueDate)
             newHomework.id = homework.objectID as NSManagedObjectID
             classHomewroks.append(newHomework)
+        }
+        
+        if (!self.classHomewroks.isEmpty){
+            self.classHomewroks = Helper.sortHomework(homeworkList: self.classHomewroks)
         }
     }
     
