@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import UserNotifications
 
-class ViewController: UITabBarController {
+class ViewController: UITabBarController, UNUserNotificationCenterDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selectedIndex = 1
-        
+        UIApplication.shared.applicationIconBadgeNumber = 0
         // Do any additional setup after loading the view, typically from a nib.
     }
 
