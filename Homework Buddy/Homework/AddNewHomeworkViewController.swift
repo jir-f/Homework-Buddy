@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class AddNewHomeworkViewController: UIViewController {
 
@@ -16,6 +17,9 @@ class AddNewHomeworkViewController: UIViewController {
     @IBOutlet weak var homewrokDescription: UITextField!
     
     @IBOutlet weak var dueDate: UITextField!
+    
+    @IBOutlet weak var alertTime: UITextField!
+    
     
     var managedObjectContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!
@@ -26,6 +30,8 @@ class AddNewHomeworkViewController: UIViewController {
     var homework = Homework(pTitle: "", pDescription: "", pDueDate: Date())
     
     let datePicker = UIDatePicker()
+    
+    var notifyDate: Date = Date()
     
     @IBAction func addHomeworkButton(_ sender: Any) {
         
@@ -38,15 +44,30 @@ class AddNewHomeworkViewController: UIViewController {
             homewrokDescription.backgroundColor = .red
         }
         else if (dueDate.text?.isEmpty)!{
-            homewrokDescription.placeholder = "Missing homework due date"
-            homewrokDescription.backgroundColor = .red
+            dueDate.placeholder = "Missing homework due date"
+            dueDate.backgroundColor = .red
+        }
+        else if (alertTime.text?.isEmpty)!{
+            alertTime.placeholder = "Missing homework Alert time"
+            alertTime.backgroundColor = .red
         }
         else{
             let date = datePicker.date
             self.homework.title = homeworkTitle.text!
             self.homework.description = homewrokDescription.text!
             self.homework.dueDate = date
-             performSegue(withIdentifier: "unwindFromAddHomework", sender: nil)
+            
+            let alert = UIAlertController(title: "Add Homework \(self.homework.title) ", message: "Alert at \(self.alertTime.text ?? "No alert for this homework")", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "Yes", style: .default, handler: { action in
+                //run your function here
+                self.scheduleNotification()
+                self.performSegue(withIdentifier: "unwindFromAddHomework", sender: nil)
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alert.addAction(okayAction)
+            alert.addAction(cancelAction)
+            present(alert, animated: true, completion: nil)
+            
 //            addHomeworkToCoreData(homeworkTitle: homeworkTitle.text!, homeworkDesc: homewrokDescription.text!, homeworkDueDate: date!, color: (self.subject?.color)!)
         }
         
@@ -71,14 +92,26 @@ class AddNewHomeworkViewController: UIViewController {
     }
     
     func createDatePicker(){
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
+        let toolbarDueDate = UIToolbar()
+        toolbarDueDate.sizeToFit()
+        
+        let toolbarAlert = UIToolbar()
+        toolbarAlert.sizeToFit()
         
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-        toolbar.setItems([doneBarButton], animated: false)
+        toolbarDueDate.setItems([doneBarButton], animated: false)
         
-        dueDate.inputAccessoryView = toolbar
+        
+        let doneBarButtonAlert = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedAlert))
+        toolbarAlert.setItems([doneBarButtonAlert], animated: false)
+        
+        
+        dueDate.inputAccessoryView = toolbarDueDate
         dueDate.inputView = datePicker
+        
+        alertTime.inputAccessoryView = toolbarAlert
+        alertTime.inputView = datePicker
+        
     }
     
     @objc func donePressed(){
@@ -86,6 +119,13 @@ class AddNewHomeworkViewController: UIViewController {
         self.view.endEditing(true)
     }
    
+    @objc func donePressedAlert(){
+        alertTime.text = "\(Helper.dateToDateHours(date: datePicker.date))"
+        notifyDate = datePicker.date
+        self.view.endEditing(true)
+    }
+    
+//    Add homework to core data
     func addHomeworkToCoreData(homeworkTitle: String, homeworkDesc: String, homeworkDueDate: Date, color: UIColor) -> NSManagedObjectID{
         
 //        let subject = NSEntityDescription.insertNewObject(forEntityName:
@@ -108,6 +148,33 @@ class AddNewHomeworkViewController: UIViewController {
         self.appDelegate.saveContext()
         
         return homework.objectID
+    }
+    
+//    Schedule notification
+    func scheduleNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "\(self.homeworkTitle.text ?? "Homework Buddy")"
+        content.body = "\(self.homewrokDescription.text ?? "You have a homework coming up")"
+        content.userInfo["homework_notifications"] = self.homeworkTitle.text
+        content.badge = 1
+        
+        
+        var alertComponent = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.notifyDate)
+        alertComponent.second = 0
+        
+        // Configure trigger for alert time 
+        let trigger = UNCalendarNotificationTrigger(dateMatching: alertComponent, repeats: false)
+        
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0,repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "HOMEWORK_SCHEDULED",
+                                            content: content, trigger: trigger)
+        // Schedule request
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error : Error?) in
+            if let theError = error {
+                print("The error in schedule request is: ",theError.localizedDescription)
+            } }
     }
 
 }

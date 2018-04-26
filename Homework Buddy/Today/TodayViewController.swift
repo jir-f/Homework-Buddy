@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
-class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UNUserNotificationCenterDelegate {
 
     var classHomewroks = [Homework]();
     
@@ -139,6 +140,30 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.homeworkTime.text = timeDue
         
         return cell
+        
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        //Remove badge notification
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        if ((navigationController?.topViewController)?.isKind(of: UITableViewController.self))!{
+            
+            
+        }
+        else{
+            navigationController?.popToRootViewController(animated: true)
+        }
+        
+        let respDest = response.notification.request.content.categoryIdentifier
+        
+        
+//        if (trips.contains(where: {$0.destinationName == respDest})){
+//            selectedRow = trips.index{$0.destinationName == respDest}!
+//            performSegue(withIdentifier: "tripDetail", sender: nil)
+//        }
         
     }
     
