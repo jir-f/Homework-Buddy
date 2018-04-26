@@ -157,8 +157,9 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             navigationController?.popToRootViewController(animated: true)
         }
         
-        let respDest = response.notification.request.content.categoryIdentifier
+//        let respDest = response.notification.request.content.categoryIdentifier
         
+        performSegue(withIdentifier: "unwindFromAddHomework", sender: nil)
         
 //        if (trips.contains(where: {$0.destinationName == respDest})){
 //            selectedRow = trips.index{$0.destinationName == respDest}!

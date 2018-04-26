@@ -365,10 +365,10 @@
             </objects>
             <point key="canvasLocation" x="651" y="1789"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--View Controller-->
         <scene sceneID="mps-Uf-yyr">
             <objects>
-                <tabBarController id="Fw8-8w-Ric" sceneMemberID="viewController">
+                <tabBarController id="Fw8-8w-Ric" customClass="ViewController" customModule="Homework_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8WT-U2-yPn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
