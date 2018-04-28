@@ -16,6 +16,7 @@ class Homework{
     var dueDate: Date;
     var id: NSManagedObjectID
     var color: UIColor
+    var subject: String;
     
     init(pTitle: String, pDescription: String, pDueDate: Date){
         self.title = pTitle;
@@ -23,6 +24,7 @@ class Homework{
         self.dueDate = pDueDate;
         self.id = NSManagedObjectID.init()
         self.color = UIColor()
+        self.subject = ""
     }
     
     func getTitle() -> String{

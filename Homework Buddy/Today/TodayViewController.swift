@@ -14,12 +14,13 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     var classHomewroks = [Homework]();
     
-    @IBOutlet weak var todayLabel: UILabel!
+    
     @IBOutlet weak var todayTable: UITableView!
     
     var managedObjectContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!
     
+    var selectedRow = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         todayTable.dataSource = self
         
         
-        self.todayLabel.text = Helper.convertToString(date: Date())
+        navigationItem.title = Helper.convertToString(date: Date())
         
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.managedObjectContext = appDelegate.persistentContainer.viewContext
@@ -79,6 +80,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 let newHomework = Homework(pTitle: homeworkTitle, pDescription: homeeworkDesc, pDueDate: homeworkDueDate)
                 newHomework.color = subject.value(forKey: "color") as! UIColor
                 newHomework.id = homework.objectID as NSManagedObjectID
+                newHomework.subject = subject.value(forKey: "name") as! String
                 
                 let due = Helper.convertToString(date: homeworkDueDate)
                 let today = Helper.convertToString(date: Date())
@@ -141,6 +143,23 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "todayHomeworkDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "todayHomeworkDetail"){
+            let homewrokDetailVC = segue.destination as! HomeworkDetailViewController
+            homewrokDetailVC.navTitle = self.classHomewroks[selectedRow].subject
+            homewrokDetailVC.passedTitle = self.classHomewroks[selectedRow].title
+            homewrokDetailVC.passedDescription = self.classHomewroks[selectedRow].description
+            homewrokDetailVC.passedDueDate = Helper.dateToDateHours(date: self.classHomewroks[selectedRow].dueDate)
+            homewrokDetailVC.color = self.classHomewroks[selectedRow].color
+            
+        }
     }
     
     

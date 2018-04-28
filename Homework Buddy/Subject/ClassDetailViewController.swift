@@ -20,6 +20,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var managedObjectContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!
    
+    var selectedRow = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -169,8 +170,22 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             addHomeworkVC.navTitle = "Add Homework for \(self.navTitle)"
             addHomeworkVC.subject = self.subject
         }
+        
+        else if(segue.identifier == "homewrokDetailView"){
+            let homewrokDetailVC = segue.destination as! HomeworkDetailViewController
+            homewrokDetailVC.navTitle = self.navTitle
+            homewrokDetailVC.passedTitle = self.classHomewroks[selectedRow].title
+            homewrokDetailVC.passedDescription = self.classHomewroks[selectedRow].description
+            homewrokDetailVC.passedDueDate = Helper.dateToDateHours(date: self.classHomewroks[selectedRow].dueDate)
+            homewrokDetailVC.color = (self.subject?.color)!
+        }
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "homewrokDetailView", sender: nil)
+    }
     
 //    Add homework entity to core data
     func addHomeworkToCoreData(homeworkTitle: String, homeworkDesc: String, homeworkDueDate: Date, color: UIColor) -> NSManagedObjectID{
