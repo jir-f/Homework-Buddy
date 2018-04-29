@@ -63,12 +63,10 @@ class AddNewHomeworkViewController: UIViewController {
                 self.scheduleNotification()
                 self.performSegue(withIdentifier: "unwindFromAddHomework", sender: nil)
             })
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alert.addAction(okayAction)
             alert.addAction(cancelAction)
             present(alert, animated: true, completion: nil)
-            
-//            addHomeworkToCoreData(homeworkTitle: homeworkTitle.text!, homeworkDesc: homewrokDescription.text!, homeworkDueDate: date!, color: (self.subject?.color)!)
         }
         
     }
@@ -124,31 +122,7 @@ class AddNewHomeworkViewController: UIViewController {
         notifyDate = datePicker.date
         self.view.endEditing(true)
     }
-    
-//    Add homework to core data
-    func addHomeworkToCoreData(homeworkTitle: String, homeworkDesc: String, homeworkDueDate: Date, color: UIColor) -> NSManagedObjectID{
-        
-//        let subject = NSEntityDescription.insertNewObject(forEntityName:
-//            "HomeworkEntity", into: self.managedObjectContext)
-        
-        let homeworkEntity = NSEntityDescription.entity(forEntityName: "HomeworkEntity", in: self.managedObjectContext)
-        let homework = HomeworkEntity(entity: homeworkEntity!, insertInto: self.managedObjectContext)
-        homework.title = homeworkTitle
-        homework.desc = homeworkDesc
-        homework.dueDate = homeworkDueDate
-        
-        do {
-            let fetchedSubject = try self.managedObjectContext.existingObject(with: (self.subject?.id)!)
-            homework.subject = fetchedSubject as? SubjectEntity
-            
-        } catch  {
-            print(error)
-        }
-        
-        self.appDelegate.saveContext()
-        
-        return homework.objectID
-    }
+
     
 //    Schedule notification
     func scheduleNotification() {
@@ -157,6 +131,8 @@ class AddNewHomeworkViewController: UIViewController {
         content.body = "\(self.homewrokDescription.text ?? "You have a homework coming up")"
         content.userInfo["homework_notifications"] = self.homeworkTitle.text
         content.badge = 1
+        content.categoryIdentifier = "\(self.homeworkTitle.text!);\(self.homewrokDescription.text!)"
+        
         
         
         var alertComponent = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.notifyDate)

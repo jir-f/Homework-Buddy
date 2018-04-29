@@ -16,23 +16,10 @@ class Subject{
     var color: UIColor
     var id: NSManagedObjectID
     
-    init(pTitle: String, pId: NSManagedObjectID, pColor: UIColor){
+    init(pTitle: String, pColor: UIColor){
         self.title = pTitle;
         id = NSManagedObjectID.init()
         self.color = pColor
     }
-    
-    func getTitle() -> String{
-        return self.title
-    }
-    
-    func addHomeowrk(pHomework: Homework) {
-        self.homeworks.append(pHomework)
-    }
-    
-    func getHomeworks() -> [Homework] {
-        return self.homeworks
-    }
-    
     
 }
