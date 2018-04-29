@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B6FCAC7209501DA00C1125B /* HomeworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FCAC6209501DA00C1125B /* HomeworkDetailViewController.swift */; };
+		4B6FCACB2095371800C1125B /* x-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B6FCACA2095371700C1125B /* x-icon.png */; };
 		4B83255620847C3E0097DD6A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B83255520847C3E0097DD6A /* TodayViewController.swift */; };
 		4B85B547207AE04E0081590A /* AddNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85B546207AE04E0081590A /* AddNewClassViewController.swift */; };
 		4B85B549207AEEBE0081590A /* AddNewHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		4B6FCAC6209501DA00C1125B /* HomeworkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkDetailViewController.swift; sourceTree = "<group>"; };
+		4B6FCACA2095371700C1125B /* x-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "x-icon.png"; path = "../../../../../Downloads/x-icon.png"; sourceTree = "<group>"; };
 		4B83255520847C3E0097DD6A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		4B85B546207AE04E0081590A /* AddNewClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewClassViewController.swift; sourceTree = "<group>"; };
 		4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHomeworkViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				4CBC2C422061C2FB003857E2 /* books.png */,
 				4CBC2C432061C2FB003857E2 /* homework.png */,
 				4CBC2C412061C2FB003857E2 /* today.png */,
+				4B6FCACA2095371700C1125B /* x-icon.png */,
 				4BC90446207AD0D300297302 /* HomeworkBuddy.xcdatamodeld */,
 			);
 			path = "Homework Buddy";
@@ -200,6 +203,7 @@
 				4C02D6FC206F361700EB3741 /* HomeworkTableViewCell.xib in Resources */,
 				4CBC2C2E2061BDFC003857E2 /* LaunchScreen.storyboard in Resources */,
 				4CBC2C442061C2FB003857E2 /* today.png in Resources */,
+				4B6FCACB2095371800C1125B /* x-icon.png in Resources */,
 				4CBC2C2B2061BDFC003857E2 /* Assets.xcassets in Resources */,
 				4CBC2C452061C2FB003857E2 /* books.png in Resources */,
 				4CBC2C292061BDFC003857E2 /* Main.storyboard in Resources */,

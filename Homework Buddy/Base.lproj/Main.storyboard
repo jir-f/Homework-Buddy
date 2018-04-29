@@ -220,7 +220,7 @@
                             <inset key="sectionInset" minX="50" minY="25" maxX="50" maxY="25"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="classCell" id="Rm9-0m-lz3">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="classCell" id="Rm9-0m-lz3" customClass="ClassesCollectionViewCell" customModule="Homework_Buddy" customModuleProvider="target">
                                 <rect key="frame" x="50" y="25" width="120" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -233,14 +233,47 @@
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <visualEffectView opaque="NO" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDT-ct-oJg">
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wBA-0p-7fw">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6X-GY-iqY">
+                                                        <rect key="frame" x="2" y="2" width="16" height="16"/>
+                                                        <state key="normal" image="x-icon.png"/>
+                                                        <connections>
+                                                            <action selector="deleteButton:" destination="Rm9-0m-lz3" eventType="touchUpInside" id="JSr-i4-XHW"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="S6X-GY-iqY" secondAttribute="trailing" constant="2" id="5Mb-Lg-Fmc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="S6X-GY-iqY" secondAttribute="bottom" constant="2" id="CWy-uN-ql9"/>
+                                                    <constraint firstItem="S6X-GY-iqY" firstAttribute="top" secondItem="wBA-0p-7fw" secondAttribute="top" constant="2" id="Tf6-WL-meb"/>
+                                                    <constraint firstItem="S6X-GY-iqY" firstAttribute="leading" secondItem="wBA-0p-7fw" secondAttribute="leading" constant="2" id="pA4-7x-Vzy"/>
+                                                </constraints>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="29Y-kc-Abb"/>
+                                                <constraint firstAttribute="height" constant="20" id="Z7X-EH-5mT"/>
+                                            </constraints>
+                                            <blurEffect style="extraLight"/>
+                                        </visualEffectView>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="gDT-ct-oJg" firstAttribute="top" secondItem="Rm9-0m-lz3" secondAttribute="top" id="218-xn-u3a"/>
                                     <constraint firstItem="RIv-Ug-J5f" firstAttribute="centerY" secondItem="Rm9-0m-lz3" secondAttribute="centerY" id="3eO-sj-0AC"/>
                                     <constraint firstItem="RIv-Ug-J5f" firstAttribute="centerX" secondItem="Rm9-0m-lz3" secondAttribute="centerX" id="6WG-Me-f1X"/>
+                                    <constraint firstItem="gDT-ct-oJg" firstAttribute="leading" secondItem="Rm9-0m-lz3" secondAttribute="leading" id="iQO-ZL-JMl"/>
                                 </constraints>
                                 <size key="customSize" width="120" height="107"/>
+                                <connections>
+                                    <outlet property="deleteCellView" destination="gDT-ct-oJg" id="XQD-5b-ZhB"/>
+                                    <outlet property="subjectName" destination="RIv-Ug-J5f" id="2cv-YZ-XvE"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -256,12 +289,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBarButtonItem" destination="EvQ-Jh-4aG" id="iSE-5d-WMS"/>
                         <segue destination="Cu0-4m-q6U" kind="show" identifier="classDetail" id="0AS-gP-jEa"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wk-QR-Z7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="999.85007496251887"/>
+            <point key="canvasLocation" x="650.72463768115949" y="999.45652173913049"/>
         </scene>
         <!--Class Detail View Controller-->
         <scene sceneID="KLM-U6-nNp">
@@ -514,6 +548,7 @@
         <image name="books.png" width="32" height="32"/>
         <image name="homework.png" width="32" height="32"/>
         <image name="today.png" width="32" height="32"/>
+        <image name="x-icon.png" width="1600" height="1600"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Qb4-qD-5Vp"/>
