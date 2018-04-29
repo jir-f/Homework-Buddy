@@ -31,7 +31,7 @@ class ClassesViewController: UICollectionViewController {
         
         getClasses()
         
-        initClasses()
+        //initClasses()
         
     }
     
@@ -62,23 +62,52 @@ class ClassesViewController: UICollectionViewController {
     }
     
     func initClasses(){
-        var bio = Subject(pTitle: "Biology", pColor: getRandomColor())
-        bio.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: Date()))
-        listOfClasses.append(bio)
+
+        var subjectName = "Biology"
+        var subjectColor = getRandomColor()
+        listOfClasses.append(Subject(pTitle: subjectName, pColor: subjectColor))
+        listOfClasses.last?.id = addClassToCoreData(className: subjectName, color: subjectColor)
+        
         
         for i in 1...5 {
-            bio.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: Date()))
+            addHomeworkToCoreData(homeworkTitle: "Homework \(i)", homeworkDesc: "Description \(i)", homeworkDueDate: Date(), color: (listOfClasses.last?.color)!, subjectId: (listOfClasses.last?.id)!)
         }
         
+        subjectName = "Math"
+        subjectColor = getRandomColor()
+        listOfClasses.append(Subject(pTitle: subjectName, pColor: subjectColor))
+        listOfClasses.last?.id = addClassToCoreData(className: subjectName, color: subjectColor)
         
-        var mth = Subject(pTitle: "Math",  pColor: getRandomColor())
-        mth.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: Date()))
-        listOfClasses.append(mth)
+        addHomeworkToCoreData(homeworkTitle: "Homework 1", homeworkDesc: "Description for the math homework", homeworkDueDate: Date(), color: (listOfClasses.last?.color)!, subjectId: (listOfClasses.last?.id)!)
         
-        var phy = Subject(pTitle: "Physics", pColor: getRandomColor())
-        phy.addHomeowrk(pHomework: Homework(pTitle: "homework 1", pDescription: "Read chapter 1", pDueDate: Date()))
-        listOfClasses.append(phy)
         
+        subjectName = "Physics"
+        subjectColor = getRandomColor()
+        listOfClasses.append(Subject(pTitle: subjectName, pColor: subjectColor))
+        listOfClasses.last?.id = addClassToCoreData(className: subjectName, color: subjectColor)
+        
+        addHomeworkToCoreData(homeworkTitle: "Homework 1", homeworkDesc: "Description for the physics homework", homeworkDueDate: Date(), color: (listOfClasses.last?.color)!, subjectId: (listOfClasses.last?.id)!)
+        
+        
+    }
+    
+    func addHomeworkToCoreData(homeworkTitle: String, homeworkDesc: String, homeworkDueDate: Date, color: UIColor, subjectId: NSManagedObjectID){
+        
+        let homeworkEntity = NSEntityDescription.entity(forEntityName: "HomeworkEntity", in: self.managedObjectContext)
+        let homework = HomeworkEntity(entity: homeworkEntity!, insertInto: self.managedObjectContext)
+        homework.title = homeworkTitle
+        homework.desc = homeworkDesc
+        homework.dueDate = homeworkDueDate
+        
+        do {
+            let fetchedSubject = try self.managedObjectContext.existingObject(with: (subjectId))
+            homework.subject = fetchedSubject as? SubjectEntity
+            
+        } catch  {
+            print(error)
+        }
+        
+        self.appDelegate.saveContext()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

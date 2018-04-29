@@ -70,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B6FCACE20955E3A00C1125B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4C9DB0F2206464EE00069486 /* Homewrok.swift */,
+				4C02D6F5206F045200EB3741 /* Subject.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		4B83255420847B3A0097DD6A /* Today */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,9 +130,8 @@
 			children = (
 				4CBC2C232061BDFC003857E2 /* AppDelegate.swift */,
 				4CBC2C252061BDFC003857E2 /* ViewController.swift */,
-				4C9DB0F2206464EE00069486 /* Homewrok.swift */,
-				4C02D6F5206F045200EB3741 /* Subject.swift */,
 				4CBC2C272061BDFC003857E2 /* Main.storyboard */,
+				4B6FCACE20955E3A00C1125B /* Classes */,
 				4B83255420847B3A0097DD6A /* Today */,
 				4BB6A5312080133900044779 /* Homework */,
 				4BB6A5302080131A00044779 /* Subject */,

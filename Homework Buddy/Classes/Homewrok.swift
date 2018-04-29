@@ -26,16 +26,4 @@ class Homework{
         self.color = UIColor()
         self.subject = ""
     }
-    
-    func getTitle() -> String{
-        return self.title
-    }
-    
-    func getDescription() -> String {
-        return self.description
-    }
-    
-    func getDueDate() -> Date {
-        return self.dueDate
-    }
 }

@@ -22,17 +22,4 @@ class Subject{
         self.color = pColor
     }
     
-    func getTitle() -> String{
-        return self.title
-    }
-    
-    func addHomeowrk(pHomework: Homework) {
-        self.homeworks.append(pHomework)
-    }
-    
-    func getHomeworks() -> [Homework] {
-        return self.homeworks
-    }
-    
-    
 }
