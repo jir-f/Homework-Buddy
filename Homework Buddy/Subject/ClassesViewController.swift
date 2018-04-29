@@ -153,8 +153,8 @@ class ClassesViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "classDetail"){
             let classDetailVC = segue.destination as! ClassDetailViewController
-            classDetailVC.navTitle = self.listOfClasses[selectedRow].getTitle()
-            classDetailVC.classHomewroks = self.listOfClasses[selectedRow].getHomeworks()
+            classDetailVC.navTitle = self.listOfClasses[selectedRow].title
+            classDetailVC.classHomewroks = self.listOfClasses[selectedRow].homeworks
             classDetailVC.subject = self.listOfClasses[selectedRow]
         }
     }
@@ -227,14 +227,14 @@ class ClassesViewController: UICollectionViewController {
             let selectedSubject = listOfClasses[indexPath.row]
             let alert = UIAlertController(title: "Are you sure you want to delete \(selectedSubject.title)", message: "This will also delete all homeworks.", preferredStyle: .alert)
             
-            let okayAction = UIAlertAction(title: "Yes", style: .default, handler: { action in
+            let okayAction = UIAlertAction(title: "Delete", style: .default, handler: { action in
                 // 1. delete the subject from core data
                 self.deleteFromCoreData(rowNumber: indexPath.row)
             })
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
-            
+            okayAction.setValue(UIColor.red, forKey: "titleTextColor")
             alert.addAction(okayAction)
             alert.addAction(cancelAction)
             present(alert, animated: true, completion: nil) 

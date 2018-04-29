@@ -101,14 +101,16 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if editingStyle == .delete {
             
             let alert = UIAlertController(title: "Delete Homework?", message: "\(self.classHomewroks[indexPath.row].title)", preferredStyle: .alert)
-            let okayAction = UIAlertAction(title: "Yes", style: .default, handler: { action in
+            let okayAction = UIAlertAction(title: "Delete", style: .default, handler: { action in
                 //run your function here
                 self.removeHomework(deleteHomework: self.classHomewroks[indexPath.row])
                 self.classHomewroks.remove(at: indexPath.row)
                 
                 self.listOfHomework.deleteRows(at: [indexPath], with: .fade)
             })
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            okayAction.setValue(UIColor.red, forKey: "titleTextColor")
             alert.addAction(okayAction)
             alert.addAction(cancelAction)
             present(alert, animated: true, completion: nil)
