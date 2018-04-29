@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B6FCAC7209501DA00C1125B /* HomeworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FCAC6209501DA00C1125B /* HomeworkDetailViewController.swift */; };
 		4B6FCACB2095371800C1125B /* x-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B6FCACA2095371700C1125B /* x-icon.png */; };
+		4B6FCAD020958BC000C1125B /* HomeworkTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FCACF20958BC000C1125B /* HomeworkTabViewController.swift */; };
 		4B83255620847C3E0097DD6A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B83255520847C3E0097DD6A /* TodayViewController.swift */; };
 		4B85B547207AE04E0081590A /* AddNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85B546207AE04E0081590A /* AddNewClassViewController.swift */; };
 		4B85B549207AEEBE0081590A /* AddNewHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		4B6FCAC6209501DA00C1125B /* HomeworkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkDetailViewController.swift; sourceTree = "<group>"; };
 		4B6FCACA2095371700C1125B /* x-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "x-icon.png"; path = "../../../../../Downloads/x-icon.png"; sourceTree = "<group>"; };
+		4B6FCACF20958BC000C1125B /* HomeworkTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkTabViewController.swift; sourceTree = "<group>"; };
 		4B83255520847C3E0097DD6A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		4B85B546207AE04E0081590A /* AddNewClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewClassViewController.swift; sourceTree = "<group>"; };
 		4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHomeworkViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				4CBC2C232061BDFC003857E2 /* AppDelegate.swift */,
 				4CBC2C252061BDFC003857E2 /* ViewController.swift */,
 				4CBC2C272061BDFC003857E2 /* Main.storyboard */,
+				4B6FCACF20958BC000C1125B /* HomeworkTabViewController.swift */,
 				4B6FCACE20955E3A00C1125B /* Classes */,
 				4B83255420847B3A0097DD6A /* Today */,
 				4BB6A5312080133900044779 /* Homework */,
@@ -240,6 +243,7 @@
 				4BC90448207AD0D300297302 /* HomeworkBuddy.xcdatamodeld in Sources */,
 				4C9DB0F52064699200069486 /* ClassesViewController.swift in Sources */,
 				4BB6A533208050B200044779 /* Helper.swift in Sources */,
+				4B6FCAD020958BC000C1125B /* HomeworkTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,8 +1,8 @@
 //
-//  TodayViewController.swift
+//  HomeworkTabViewController.swift
 //  Homework Buddy
 //
-//  Created by Jiro Farah on 4/15/18.
+//  Created by Jiro Farah on 4/28/18.
 //  Copyright © 2018 Jiro Farah. All rights reserved.
 //
 
@@ -10,45 +10,37 @@ import UIKit
 import CoreData
 import UserNotifications
 
-class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UNUserNotificationCenterDelegate  {
-
+class HomeworkTabViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var classHomewroks = [Homework]();
-    var allHomeworks = [Homework]();
     
-    @IBOutlet weak var todayTable: UITableView!
-    
+    @IBOutlet weak var homeworkTable: UITableView!
     var managedObjectContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!
-    
     var selectedRow = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        todayTable.delegate = self
-        todayTable.dataSource = self
-        
-        UNUserNotificationCenter.current().delegate = self
-        navigationItem.title = Helper.convertToString(date: Date())
-        
+        homeworkTable.delegate = self
+        homeworkTable.dataSource = self
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.managedObjectContext = appDelegate.persistentContainer.viewContext
+        
         getHomeworks()
-        self.todayTable.reloadData()
+        self.homeworkTable.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         classHomewroks = []
         getHomeworks()
-        self.todayTable.reloadData()
+        self.homeworkTable.reloadData()
     }
-
     
     func getHomeworks(){
         let fetchClassesRequest = NSFetchRequest<NSManagedObject>(entityName: "SubjectEntity")
@@ -81,13 +73,8 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 newHomework.color = subject.value(forKey: "color") as! UIColor
                 newHomework.id = homework.objectID as NSManagedObjectID
                 newHomework.subject = subject.value(forKey: "name") as! String
+                classHomewroks.append(newHomework)
                 
-                let due = Helper.convertToString(date: homeworkDueDate)
-                let today = Helper.convertToString(date: Date())
-                if(due == today){
-                    classHomewroks.append(newHomework)
-                }
-                    allHomeworks.append(newHomework)
             }
         }
         
@@ -101,7 +88,6 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = Bundle.main.loadNibNamed("HomeworkTableViewCell", owner: self, options: nil)?.first as! HomeworkTableViewCell
         
         let row = indexPath.row
@@ -142,16 +128,16 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.homeworkTime.text = timeDue
         
         return cell
-        
+    
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRow = indexPath.row
-        performSegue(withIdentifier: "todayHomeworkDetail", sender: nil)
+        performSegue(withIdentifier: "homeworkTabDetailView", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "todayHomeworkDetail"){
+        if(segue.identifier == "homeworkTabDetailView"){
             let homewrokDetailVC = segue.destination as! HomeworkDetailViewController
             homewrokDetailVC.navTitle = self.classHomewroks[selectedRow].subject
             homewrokDetailVC.passedTitle = self.classHomewroks[selectedRow].title
@@ -160,48 +146,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             homewrokDetailVC.color = self.classHomewroks[selectedRow].color
             
         }
-        else if (segue.identifier == "notificationDetail"){
-            let homewrokDetailVC = segue.destination as! HomeworkDetailViewController
-            homewrokDetailVC.navTitle = self.allHomeworks[selectedRow].subject
-            homewrokDetailVC.passedTitle = self.allHomeworks[selectedRow].title
-            homewrokDetailVC.passedDescription = self.allHomeworks[selectedRow].description
-            homewrokDetailVC.passedDueDate = Helper.dateToDateHours(date: self.allHomeworks[selectedRow].dueDate)
-            homewrokDetailVC.color = self.allHomeworks[selectedRow].color
-            
-        }
     }
     
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert])
-    }
-    
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        
-//        if ((navigationController?.topViewController)?.isKind(of: UIViewController.self))!{
-//
-//
-//        }
-//        else{
-//            
-//        }
-        //navigationController?.popToRootViewController(animated: true)
-        let respDest = response.notification.request.content.categoryIdentifier
-        print(respDest)
-        
-        let tmpString = respDest.components(separatedBy: ";")
-        
-        
-        let homeworkTitle = tmpString[0]
-        let homeworkDescription = tmpString[1]
-        
-        if ( allHomeworks.contains(where: {$0.title == homeworkTitle && $0.description == homeworkDescription})){
-            selectedRow = allHomeworks.index{$0.title == homeworkTitle && $0.description == homeworkDescription}!
-            performSegue(withIdentifier: "notificationDetail", sender: nil)
-        }
-    }
-
 }
