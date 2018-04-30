@@ -207,6 +207,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
+    
     @IBAction func unwindFromAddHomework (sender: UIStoryboardSegue) {
         let addHomeworkVC = sender.source as! AddNewHomeworkViewController
         let homeworkTitle = addHomeworkVC.homework.title
@@ -221,6 +222,19 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         classHomewroks.append(homework)
         self.listOfHomework.reloadData()
         
+    }
+    
+    @IBAction func unwindFromCompleteHwToClassDetail (sender: UIStoryboardSegue) {
+        let detailHomeworkVC = sender.source as! HomeworkDetailViewController
+        let homeworkName = detailHomeworkVC.passedTitle
+        
+        if (classHomewroks.contains(where: {$0.title == homeworkName})){
+            let deletedRow = classHomewroks.index{$0.title == homeworkName}!
+            self.removeHomework(deleteHomework: classHomewroks[deletedRow])
+            self.classHomewroks.remove(at: deletedRow)
+            self.listOfHomework.reloadData()
+            
+        }
     }
     
 }

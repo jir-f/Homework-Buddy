@@ -20,10 +20,23 @@ class HomeworkDetailViewController: UIViewController, UINavigationBarDelegate{
     
     @IBAction func completeButtonAction(_ sender: Any) {
         
-        let alert = UIAlertController(title: "Completed Homework \(self.passedTitle)", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Completed Homework", message: "\(self.passedTitle) will be removed from your homework list", preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "Yes", style: .default, handler: { action in
             //run your function here
-            self.performSegue(withIdentifier: "BackToToday", sender: nil)
+           
+            let n: Int! = self.navigationController?.viewControllers.count
+            let cameFrom = self.navigationController?.viewControllers[n-2]
+            
+            if(cameFrom is TodayViewController ){
+                self.performSegue(withIdentifier: "BackToToday", sender: nil)
+                
+            }
+            else if (cameFrom is ClassDetailViewController){
+                self.performSegue(withIdentifier: "BackToClassDetail", sender: nil)
+            }
+            else if (cameFrom is HomeworkTabViewController){
+                self.performSegue(withIdentifier: "BackToHomework", sender: nil)
+            }
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(okayAction)
@@ -52,7 +65,6 @@ class HomeworkDetailViewController: UIViewController, UINavigationBarDelegate{
         titleLabel.text = passedTitle
         descriptionLabel.text = passedDescription
         dueDateLabel.text = passedDueDate
-        
         
     }
 
