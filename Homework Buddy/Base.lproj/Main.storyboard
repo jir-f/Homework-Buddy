@@ -514,7 +514,7 @@
         <scene sceneID="CFf-GC-rkx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GWH-la-jnf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Classes" image="books.png" selectedImage="books.png" id="8vG-X2-FDL"/>
+                    <tabBarItem key="tabBarItem" title="Classes" image="Classes" selectedImage="Classes" id="8vG-X2-FDL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P67-7K-NB2">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -533,7 +533,7 @@
         <scene sceneID="aEa-p2-ApT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yZu-NJ-ung" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Homework" image="homework.png" selectedImage="homework.png" id="D4M-wz-zXz">
+                    <tabBarItem key="tabBarItem" title="Homework" image="Homework" selectedImage="Homework" id="D4M-wz-zXz">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -554,7 +554,7 @@
         <scene sceneID="yoA-33-TKs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JnF-Qn-q9Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Today" image="today.png" selectedImage="today.png" id="JEp-R1-1Wf">
+                    <tabBarItem key="tabBarItem" title="Today" image="Today" selectedImage="Today" id="JEp-R1-1Wf">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -573,9 +573,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="books.png" width="32" height="32"/>
-        <image name="homework.png" width="32" height="32"/>
-        <image name="today.png" width="32" height="32"/>
+        <image name="Classes" width="23" height="23"/>
+        <image name="Homework" width="34" height="34"/>
+        <image name="Today" width="23" height="23"/>
         <image name="x-icon.png" width="1600" height="1600"/>
     </resources>
     <inferredMetricsTieBreakers>

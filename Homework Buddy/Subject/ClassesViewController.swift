@@ -224,7 +224,7 @@ class ClassesViewController: UICollectionViewController {
     func delete(cell: ClassesCollectionViewCell){
         if let indexPath = collectionView?.indexPath(for: cell){
             let selectedSubject = listOfClasses[indexPath.row]
-            let alert = UIAlertController(title: "Are you sure you want to delete \(selectedSubject.title)", message: "This will also delete all homeworks.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Are you sure you want to delete \(selectedSubject.title)", message: "This will delete all homeworks.", preferredStyle: .alert)
             
             let okayAction = UIAlertAction(title: "Delete", style: .default, handler: { action in
                 // 1. delete the subject from core data

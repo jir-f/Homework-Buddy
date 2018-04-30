@@ -28,9 +28,6 @@
 		4CBC2C292061BDFC003857E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC2C272061BDFC003857E2 /* Main.storyboard */; };
 		4CBC2C2B2061BDFC003857E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC2C2A2061BDFC003857E2 /* Assets.xcassets */; };
 		4CBC2C2E2061BDFC003857E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC2C2C2061BDFC003857E2 /* LaunchScreen.storyboard */; };
-		4CBC2C442061C2FB003857E2 /* today.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC2C412061C2FB003857E2 /* today.png */; };
-		4CBC2C452061C2FB003857E2 /* books.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC2C422061C2FB003857E2 /* books.png */; };
-		4CBC2C462061C2FB003857E2 /* homework.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC2C432061C2FB003857E2 /* homework.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,9 +55,6 @@
 		4CBC2C2A2061BDFC003857E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CBC2C2D2061BDFC003857E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CBC2C2F2061BDFC003857E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CBC2C412061C2FB003857E2 /* today.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = today.png; sourceTree = "<group>"; };
-		4CBC2C422061C2FB003857E2 /* books.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = books.png; sourceTree = "<group>"; };
-		4CBC2C432061C2FB003857E2 /* homework.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homework.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +102,7 @@
 				4B6FCAC6209501DA00C1125B /* HomeworkDetailViewController.swift */,
 				4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */,
 				4C02D6F9206F361700EB3741 /* HomeworkTableViewCell.swift */,
+				4B6FCACF20958BC000C1125B /* HomeworkTabViewController.swift */,
 			);
 			path = Homework;
 			sourceTree = "<group>";
@@ -135,7 +130,6 @@
 				4CBC2C232061BDFC003857E2 /* AppDelegate.swift */,
 				4CBC2C252061BDFC003857E2 /* ViewController.swift */,
 				4CBC2C272061BDFC003857E2 /* Main.storyboard */,
-				4B6FCACF20958BC000C1125B /* HomeworkTabViewController.swift */,
 				4B6FCACE20955E3A00C1125B /* Classes */,
 				4B83255420847B3A0097DD6A /* Today */,
 				4BB6A5312080133900044779 /* Homework */,
@@ -146,9 +140,6 @@
 				4B9B52712096A9EE00ED2830 /* AppIcon.appiconset */,
 				4CBC2C2C2061BDFC003857E2 /* LaunchScreen.storyboard */,
 				4CBC2C2F2061BDFC003857E2 /* Info.plist */,
-				4CBC2C422061C2FB003857E2 /* books.png */,
-				4CBC2C432061C2FB003857E2 /* homework.png */,
-				4CBC2C412061C2FB003857E2 /* today.png */,
 				4B6FCACA2095371700C1125B /* x-icon.png */,
 				4BC90446207AD0D300297302 /* HomeworkBuddy.xcdatamodeld */,
 			);
@@ -216,13 +207,10 @@
 			files = (
 				4C02D6FC206F361700EB3741 /* HomeworkTableViewCell.xib in Resources */,
 				4CBC2C2E2061BDFC003857E2 /* LaunchScreen.storyboard in Resources */,
-				4CBC2C442061C2FB003857E2 /* today.png in Resources */,
 				4B6FCACB2095371800C1125B /* x-icon.png in Resources */,
 				4B9B52722096A9EF00ED2830 /* AppIcon.appiconset in Resources */,
 				4CBC2C2B2061BDFC003857E2 /* Assets.xcassets in Resources */,
-				4CBC2C452061C2FB003857E2 /* books.png in Resources */,
 				4CBC2C292061BDFC003857E2 /* Main.storyboard in Resources */,
-				4CBC2C462061C2FB003857E2 /* homework.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
