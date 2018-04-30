@@ -203,5 +203,28 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             performSegue(withIdentifier: "notificationDetail", sender: nil)
         }
     }
+    
+    func removeHomework(deleteHomework: Homework){
+        
+        let homeworkObject: NSManagedObject! = self.managedObjectContext.object(with: deleteHomework.id)
+        
+        self.managedObjectContext.delete(homeworkObject)
+        
+        self.appDelegate.saveContext()
+        
+    }
+    
+    @IBAction func unwindFromCompleteHwToToday (sender: UIStoryboardSegue) {
+        let detailHomeworkVC = sender.source as! HomeworkDetailViewController
+        let homeworkName = detailHomeworkVC.passedTitle
+        
+        if (classHomewroks.contains(where: {$0.title == homeworkName})){
+            let deletedRow = classHomewroks.index{$0.title == homeworkName}!
+            self.removeHomework(deleteHomework: classHomewroks[deletedRow])
+            self.classHomewroks.remove(at: deletedRow)
+            self.todayTable.reloadData()
+            
+        }
+    }
 
 }

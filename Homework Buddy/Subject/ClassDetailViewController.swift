@@ -222,5 +222,5 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.listOfHomework.reloadData()
         
     }
-
+    
 }

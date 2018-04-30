@@ -16,6 +16,21 @@ class HomeworkDetailViewController: UIViewController, UINavigationBarDelegate{
     
     @IBOutlet weak var dueDateLabel: UILabel!
     
+    @IBOutlet weak var completeButton: UIButton!
+    
+    @IBAction func completeButtonAction(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Completed Homework \(self.passedTitle)", message: "", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Yes", style: .default, handler: { action in
+            //run your function here
+            self.performSegue(withIdentifier: "BackToToday", sender: nil)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(okayAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     var navTitle = ""
     var passedTitle = ""
     var passedDescription = ""
@@ -25,6 +40,10 @@ class HomeworkDetailViewController: UIViewController, UINavigationBarDelegate{
     var gradientLayer: CAGradientLayer!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        completeButton.backgroundColor = self.color
+        completeButton.layer.cornerRadius = 4
+        completeButton.setTitleColor(UIColor.white, for: .normal)
         
         createGradientLayer()
         
@@ -47,7 +66,7 @@ class HomeworkDetailViewController: UIViewController, UINavigationBarDelegate{
         
         gradientLayer.frame = self.view.bounds
         
-        gradientLayer.colors = [UIColor.white.cgColor, self.color.cgColor]
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, self.color.cgColor]
         
 //        self.view.layer.addSublayer(gradientLayer)
         self.view.layer.insertSublayer(gradientLayer, at: 0)
