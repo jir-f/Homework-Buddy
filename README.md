@@ -29,7 +29,7 @@ In order to add new classes
 * Tap the **+** button
 * Input the class name and tap add
 
-<!-- ![alt text] () -->
+![Alt Text](https://github.com/jir-f/Homework-Buddy/raw/master/Gifs/Add-Class.gif)
 
 
 ### Deleting a class
