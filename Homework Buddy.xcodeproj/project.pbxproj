@@ -13,6 +13,7 @@
 		4B83255620847C3E0097DD6A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B83255520847C3E0097DD6A /* TodayViewController.swift */; };
 		4B85B547207AE04E0081590A /* AddNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85B546207AE04E0081590A /* AddNewClassViewController.swift */; };
 		4B85B549207AEEBE0081590A /* AddNewHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */; };
+		4B9B52722096A9EF00ED2830 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 4B9B52712096A9EE00ED2830 /* AppIcon.appiconset */; };
 		4BB6A533208050B200044779 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB6A532208050B200044779 /* Helper.swift */; };
 		4BC90448207AD0D300297302 /* HomeworkBuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BC90446207AD0D300297302 /* HomeworkBuddy.xcdatamodeld */; };
 		4C02D6F6206F045200EB3741 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02D6F5206F045200EB3741 /* Subject.swift */; };
@@ -39,6 +40,7 @@
 		4B83255520847C3E0097DD6A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		4B85B546207AE04E0081590A /* AddNewClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewClassViewController.swift; sourceTree = "<group>"; };
 		4B85B548207AEEBE0081590A /* AddNewHomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHomeworkViewController.swift; sourceTree = "<group>"; };
+		4B9B52712096A9EE00ED2830 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		4BB6A532208050B200044779 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		4BC90447207AD0D300297302 /* HomeworkBuddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeworkBuddy.xcdatamodel; sourceTree = "<group>"; };
 		4C02D6F5206F045200EB3741 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				4C02D6FA206F361700EB3741 /* HomeworkTableViewCell.xib */,
 				4BB6A532208050B200044779 /* Helper.swift */,
 				4CBC2C2A2061BDFC003857E2 /* Assets.xcassets */,
+				4B9B52712096A9EE00ED2830 /* AppIcon.appiconset */,
 				4CBC2C2C2061BDFC003857E2 /* LaunchScreen.storyboard */,
 				4CBC2C2F2061BDFC003857E2 /* Info.plist */,
 				4CBC2C422061C2FB003857E2 /* books.png */,
@@ -179,7 +182,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Jiro Farah";
 				TargetAttributes = {
 					4CBC2C1F2061BDFC003857E2 = {
@@ -215,6 +218,7 @@
 				4CBC2C2E2061BDFC003857E2 /* LaunchScreen.storyboard in Resources */,
 				4CBC2C442061C2FB003857E2 /* today.png in Resources */,
 				4B6FCACB2095371800C1125B /* x-icon.png in Resources */,
+				4B9B52722096A9EF00ED2830 /* AppIcon.appiconset in Resources */,
 				4CBC2C2B2061BDFC003857E2 /* Assets.xcassets in Resources */,
 				4CBC2C452061C2FB003857E2 /* books.png in Resources */,
 				4CBC2C292061BDFC003857E2 /* Main.storyboard in Resources */,
@@ -283,6 +287,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -290,6 +295,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -340,6 +346,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -347,6 +354,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

@@ -20,7 +20,10 @@ class ViewController: UITabBarController, UNUserNotificationCenterDelegate {
         UIApplication.shared.applicationIconBadgeNumber = 0
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.managedObjectContext = appDelegate.persistentContainer.viewContext
-        initClasses()
+        if(!checkIfClassExists()){
+            initClasses()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,6 +81,26 @@ class ViewController: UITabBarController, UNUserNotificationCenterDelegate {
         }
         
         self.appDelegate.saveContext()
+    }
+    
+    func checkIfClassExists() -> Bool{
+        let fetchClassesRequest = NSFetchRequest<NSManagedObject>(entityName: "SubjectEntity")
+        
+        var savedClasses: [NSManagedObject]!
+        do {
+            savedClasses = try self.managedObjectContext.fetch(fetchClassesRequest) }
+        catch {
+            print("getHomeowkrs classes error: \(error)")
+        }
+        //        print("Found \(savedClasses.count) classes")
+        
+        for subject in savedClasses {
+            let subjectName = subject.value(forKey: "name") as! String
+            if(subjectName == "Biology" || subjectName == "Physics" || subjectName == "Math"){
+                return true;
+            }
+        }
+        return false;
     }
     
     func getRandomColor() -> UIColor{

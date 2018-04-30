@@ -59,7 +59,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         catch {
             print("getHomeowkrs classes error: \(error)")
         }
-        print("Found \(savedClasses.count) classes")
+//        print("Found \(savedClasses.count) classes")
         
         for subject in savedClasses {
             let fetchHomeworkRequest = NSFetchRequest<NSManagedObject>(entityName: "HomeworkEntity")
@@ -201,6 +201,29 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if ( allHomeworks.contains(where: {$0.title == homeworkTitle && $0.description == homeworkDescription})){
             selectedRow = allHomeworks.index{$0.title == homeworkTitle && $0.description == homeworkDescription}!
             performSegue(withIdentifier: "notificationDetail", sender: nil)
+        }
+    }
+    
+    func removeHomework(deleteHomework: Homework){
+        
+        let homeworkObject: NSManagedObject! = self.managedObjectContext.object(with: deleteHomework.id)
+        
+        self.managedObjectContext.delete(homeworkObject)
+        
+        self.appDelegate.saveContext()
+        
+    }
+    
+    @IBAction func unwindFromCompleteHwToToday (sender: UIStoryboardSegue) {
+        let detailHomeworkVC = sender.source as! HomeworkDetailViewController
+        let homeworkName = detailHomeworkVC.passedTitle
+        
+        if (classHomewroks.contains(where: {$0.title == homeworkName})){
+            let deletedRow = classHomewroks.index{$0.title == homeworkName}!
+            self.removeHomework(deleteHomework: classHomewroks[deletedRow])
+            self.classHomewroks.remove(at: deletedRow)
+            self.todayTable.reloadData()
+            
         }
     }
 

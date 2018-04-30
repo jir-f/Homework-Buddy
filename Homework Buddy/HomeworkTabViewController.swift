@@ -136,6 +136,16 @@ class HomeworkTabViewController: UIViewController, UITableViewDelegate, UITableV
         performSegue(withIdentifier: "homeworkTabDetailView", sender: nil)
     }
     
+    func removeHomework(deleteHomework: Homework){
+        
+        let homeworkObject: NSManagedObject! = self.managedObjectContext.object(with: deleteHomework.id)
+        
+        self.managedObjectContext.delete(homeworkObject)
+        
+        self.appDelegate.saveContext()
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "homeworkTabDetailView"){
             let homewrokDetailVC = segue.destination as! HomeworkDetailViewController
@@ -147,6 +157,16 @@ class HomeworkTabViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
     }
-    
-    
+    @IBAction func unwindFromCompleteHwToHomework (sender: UIStoryboardSegue) {
+        let detailHomeworkVC = sender.source as! HomeworkDetailViewController
+        let homeworkName = detailHomeworkVC.passedTitle
+        
+        if (classHomewroks.contains(where: {$0.title == homeworkName})){
+            let deletedRow = classHomewroks.index{$0.title == homeworkName}!
+            self.removeHomework(deleteHomework: classHomewroks[deletedRow])
+            self.classHomewroks.remove(at: deletedRow)
+            self.homeworkTable.reloadData()
+            
+        }
+    }
 }

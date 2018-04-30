@@ -44,7 +44,6 @@
                             <constraint firstItem="oHK-QU-Civ" firstAttribute="leading" secondItem="HQj-68-SyA" secondAttribute="leading" constant="6" id="U3b-LE-FZZ"/>
                             <constraint firstAttribute="trailing" secondItem="agW-8e-btl" secondAttribute="trailing" constant="5" id="ZIT-mp-fd6"/>
                             <constraint firstItem="agW-8e-btl" firstAttribute="leading" secondItem="HQj-68-SyA" secondAttribute="leading" constant="5" id="Zt1-5v-Bjb"/>
-                            <constraint firstAttribute="height" constant="75" id="dNR-EG-Zbm"/>
                             <constraint firstAttribute="width" constant="75" id="lIh-bQ-9Lm"/>
                             <constraint firstItem="agW-8e-btl" firstAttribute="top" secondItem="HQj-68-SyA" secondAttribute="top" constant="15" id="lWk-ht-5N6"/>
                         </constraints>

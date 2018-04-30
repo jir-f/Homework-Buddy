@@ -48,7 +48,6 @@ class ClassesViewController: UICollectionViewController {
             savedClasses = try self.managedObjectContext.fetch(fetchRequest) } catch {
                 print("getClasses error: \(error)")
         }
-        print("Found \(savedClasses.count) classes")
         
         listOfClasses = []
         for subject in savedClasses {
