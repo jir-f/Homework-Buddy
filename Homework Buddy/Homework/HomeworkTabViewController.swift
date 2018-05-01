@@ -51,7 +51,7 @@ class HomeworkTabViewController: UIViewController, UITableViewDelegate, UITableV
         catch {
             print("getHomeowkrs classes error: \(error)")
         }
-        print("Found \(savedClasses.count) classes")
+//        print("Found \(savedClasses.count) classes")
         
         for subject in savedClasses {
             let fetchHomeworkRequest = NSFetchRequest<NSManagedObject>(entityName: "HomeworkEntity")

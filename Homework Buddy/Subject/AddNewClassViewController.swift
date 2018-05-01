@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddNewClassViewController: UIViewController {
+class AddNewClassViewController: UIViewController, UITextFieldDelegate {
     
     var subjectName: String = ""
     
@@ -30,13 +30,19 @@ class AddNewClassViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "New Class"
-        
+        self.classTextField.delegate = self
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //press return key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        classTextField.resignFirstResponder()
+        return true
     }
     
 }

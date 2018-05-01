@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import UserNotifications
 
-class AddNewHomeworkViewController: UIViewController {
+class AddNewHomeworkViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var homeworkTitle: UITextField!
     
@@ -31,6 +31,7 @@ class AddNewHomeworkViewController: UIViewController {
     
     let datePicker = UIDatePicker()
     
+    var dueHWDate: Date = Date()
     var notifyDate: Date = Date()
     
     @IBAction func addHomeworkButton(_ sender: Any) {
@@ -52,10 +53,10 @@ class AddNewHomeworkViewController: UIViewController {
             alertTime.backgroundColor = .red
         }
         else{
-            let date = datePicker.date
+            
             self.homework.title = homeworkTitle.text!
             self.homework.description = homewrokDescription.text!
-            self.homework.dueDate = date
+            self.homework.dueDate = self.dueHWDate
             
             let alert = UIAlertController(title: "Add Homework \(self.homework.title) ", message: "Alert at \(self.alertTime.text ?? "No alert for this homework")", preferredStyle: .alert)
             let okayAction = UIAlertAction(title: "Yes", style: .default, handler: { action in
@@ -80,6 +81,9 @@ class AddNewHomeworkViewController: UIViewController {
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         self.managedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        self.homeworkTitle.delegate = self
+        self.homewrokDescription.delegate = self
         
         createDatePicker()
     }
@@ -114,6 +118,7 @@ class AddNewHomeworkViewController: UIViewController {
     
     @objc func donePressed(){
         dueDate.text = "\(Helper.dateToDateHours(date: datePicker.date))"
+        dueHWDate = datePicker.date
         self.view.endEditing(true)
     }
    
@@ -151,6 +156,13 @@ class AddNewHomeworkViewController: UIViewController {
             if let theError = error {
                 print("The error in schedule request is: ",theError.localizedDescription)
             } }
+    }
+    
+    //press return key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        homeworkTitle.resignFirstResponder()
+        homewrokDescription.resignFirstResponder()
+        return true
     }
 
 }

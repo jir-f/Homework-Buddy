@@ -41,6 +41,12 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.listOfHomework.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.classHomewroks = []
+        getHomeworks()
+        self.listOfHomework.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -147,7 +153,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         catch {
                 print("getHomeowkrs error: \(error)")
         }
-        print("Found \(savedHomeworks.count) homeworks")
+//        print("Found \(savedHomeworks.count) homeworks")
         
         classHomewroks = []
         for homework in savedHomeworks {

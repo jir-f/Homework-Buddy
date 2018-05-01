@@ -185,7 +185,7 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tabBarController?.selectedIndex = 1
         
         let respDest = response.notification.request.content.categoryIdentifier
-        print(respDest)
+//        print(respDest)
         
         let tmpString = respDest.components(separatedBy: ";")
         
@@ -216,10 +216,10 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let detailHomeworkVC = sender.source as! HomeworkDetailViewController
         let homeworkName = detailHomeworkVC.passedTitle
         
-        if (classHomewroks.contains(where: {$0.title == homeworkName})){
-            let deletedRow = classHomewroks.index{$0.title == homeworkName}!
-            self.removeHomework(deleteHomework: classHomewroks[deletedRow])
-            self.classHomewroks.remove(at: deletedRow)
+        if (allHomeworks.contains(where: {$0.title == homeworkName})){
+            let deletedRow = allHomeworks.index{$0.title == homeworkName}!
+            self.removeHomework(deleteHomework: allHomeworks[deletedRow])
+            self.allHomeworks.remove(at: deletedRow)
             self.todayTable.reloadData()
             
         }
