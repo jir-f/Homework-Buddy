@@ -127,7 +127,7 @@ class AddNewHomeworkViewController: UIViewController {
 //    Schedule notification
     func scheduleNotification() {
         let content = UNMutableNotificationContent()
-        content.title = "\(self.homeworkTitle.text ?? "Homework Buddy")"
+        content.title = "\(self.subject?.title ?? ""): \(self.homeworkTitle.text ?? "Homework Buddy")"
         content.body = "\(self.homewrokDescription.text ?? "You have a homework coming up")"
         content.userInfo["homework_notifications"] = self.homeworkTitle.text
         content.badge = 1

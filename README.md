@@ -39,7 +39,7 @@ In order to add new classes
 * Edit mode will turn on
 * Tap the **x** icon on the classes that you wish to delete
 * Confirm that you want to delete the class
-*Deleting a class will remove it from core data*
+* Deleting a class will remove it from core data*
 
 ![Alt Text](https://github.com/jir-f/Homework-Buddy/raw/master/Gifs/Delete-Class.gif)
 
