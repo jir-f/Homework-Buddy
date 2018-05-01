@@ -29,7 +29,6 @@ class HomeworkDetailViewController: UIViewController, UINavigationBarDelegate{
             
             if(cameFrom is TodayViewController ){
                 self.performSegue(withIdentifier: "BackToToday", sender: nil)
-                
             }
             else if (cameFrom is ClassDetailViewController){
                 self.performSegue(withIdentifier: "BackToClassDetail", sender: nil)

@@ -181,19 +181,17 @@ class TodayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         UIApplication.shared.applicationIconBadgeNumber = 0
         
-//        if ((navigationController?.topViewController)?.isKind(of: UIViewController.self))!{
-//
-//
-//        }
-//        else{
-//            
-//        }
-        //navigationController?.popToRootViewController(animated: true)
+        // Change tab to today
+        self.tabBarController?.selectedIndex = 1
+        
         let respDest = response.notification.request.content.categoryIdentifier
         print(respDest)
         
         let tmpString = respDest.components(separatedBy: ";")
         
+        classHomewroks = []
+        allHomeworks = []
+        getHomeworks()
         
         let homeworkTitle = tmpString[0]
         let homeworkDescription = tmpString[1]
